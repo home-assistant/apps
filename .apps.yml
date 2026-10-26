@@ -22,6 +22,10 @@ apps:
     repository: home-assistant/app-ssh
     target: ssh
     image: ghcr.io/home-assistant/app-ssh
+  vlc:
+    repository: home-assistant/app-vlc
+    target: vlc
+    image: ghcr.io/home-assistant/app-vlc
   zwave_js:
     repository: home-assistant/app-zwave-js
     target: zwave_js

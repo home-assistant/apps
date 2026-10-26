@@ -8,4 +8,5 @@ ignore: |
   /mariadb/config.yaml
   /matter_server/config.yaml
   /ssh/config.yaml
+  /vlc/config.yaml
   /zwave_js/config.yaml
