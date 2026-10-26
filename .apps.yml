@@ -10,14 +10,18 @@ apps:
     repository: home-assistant/app-configurator
     target: configurator
     image: ghcr.io/home-assistant/app-configurator
-  ssh:
-    repository: home-assistant/app-ssh
-    target: ssh
-    image: ghcr.io/home-assistant/app-ssh
+  mariadb:
+    repository: home-assistant/app-mariadb
+    target: mariadb
+    image: ghcr.io/home-assistant/app-mariadb
   matter_server:
     repository: home-assistant/app-matter-server
     target: matter_server
     image: ghcr.io/home-assistant/app-matter-server
+  ssh:
+    repository: home-assistant/app-ssh
+    target: ssh
+    image: ghcr.io/home-assistant/app-ssh
   zwave_js:
     repository: home-assistant/app-zwave-js
     target: zwave_js
