@@ -18,6 +18,10 @@ apps:
     repository: home-assistant/app-matter-server
     target: matter_server
     image: ghcr.io/home-assistant/app-matter-server
+  mosquitto:
+    repository: home-assistant/app-mosquitto
+    target: mosquitto
+    image: ghcr.io/home-assistant/app-mosquitto
   ssh:
     repository: home-assistant/app-ssh
     target: ssh

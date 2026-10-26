@@ -1,8 +1,0 @@
-#!/usr/bin/with-contenv bashio
-# vim: ft=bash
-# shellcheck shell=bash
-# ==============================================================================
-# Runs the NGINX daemon
-# ==============================================================================
-bashio::log.info "Starting NGINX for authentication handling..."
-exec nginx

@@ -7,5 +7,6 @@ ignore: |
   /configurator/config.yaml
   /mariadb/config.yaml
   /matter_server/config.yaml
+  /mosquitto/config.yaml
   /ssh/config.yaml
   /zwave_js/config.yaml
