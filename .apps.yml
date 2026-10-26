@@ -10,6 +10,10 @@ apps:
     repository: home-assistant/app-configurator
     target: configurator
     image: ghcr.io/home-assistant/app-configurator
+  git_pull:
+    repository: home-assistant/app-git-pull
+    target: git_pull
+    image: ghcr.io/home-assistant/app-git-pull
   mariadb:
     repository: home-assistant/app-mariadb
     target: mariadb
