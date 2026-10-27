@@ -46,8 +46,7 @@ configuration:
   network_discovery:
     name: Enable network discovery
     description: >-
-      Advertise the host with Web Services Dynamic Discovery so it appears
-      automatically under Network in Windows File Explorer. Disable if you
+      Advertise the host with DNS-SD/mDNS and WS-Discovery. Disable if you
       connect by hostname or IP address and do not want the host to announce
       itself on the network. Shares stay reachable either way.
   server_signing:

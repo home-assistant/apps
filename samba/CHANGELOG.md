@@ -1,5 +1,9 @@
 # Changelog
 
+## 12.11.0
+
+- Add service discovery using DNS-SD/mDNS controlled by the `network_discovery` configuration option added in 12.9.0.
+
 ## 12.10.0
 
 - Rename the `addons` and `addon_configs` shares to `local_apps` and `app_configs` to match Home Assistant's app terminology. Existing `enabled_shares` configurations are migrated automatically on start (extending the lower-case normalization added in 12.8.1).

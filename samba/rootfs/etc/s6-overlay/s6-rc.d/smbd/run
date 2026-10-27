@@ -4,6 +4,21 @@
 # ==============================================================================
 # Start smbd service
 # ==============================================================================
+if bashio::config.true 'network_discovery'; then
+bashio::log.info "Registering smb service in mDNS"
+gdbus call --system \
+  --dest org.freedesktop.resolve1 \
+  --object-path /org/freedesktop/resolve1 \
+  --method org.freedesktop.resolve1.Manager.RegisterService \
+  "$(hostname)" \
+  "%H" \
+  "_smb._tcp" \
+  445 \
+  0 \
+  0 \
+  []
+fi
+
 exec smbd \
   --foreground \
   --debug-stdout \

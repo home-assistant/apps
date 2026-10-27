@@ -14,6 +14,17 @@ bashio::log.info \
   "Service ${service} exited with code ${exit_code_service}" \
   "(by signal ${exit_code_signal})"
 
+if bashio::config.true 'network_discovery'; then
+bashio::log.info "Unregistering smb service in mDNS"
+app_hostname=$(hostname)
+# Fix object path encoding by replacing "-" with "_2d"
+gdbus call --system \
+  --dest org.freedesktop.resolve1 \
+  --object-path /org/freedesktop/resolve1 \
+  --method org.freedesktop.resolve1.Manager.UnregisterService \
+  "/org/freedesktop/resolve1/dnssd/${app_hostname//-/_2d}"
+fi
+
 if [[ "${exit_code_service}" -eq 256 ]]; then
   # SIGTERM (15) is how s6-overlay brings the service down during a normal
   # container shutdown; halt the supervision tree but keep the container exit

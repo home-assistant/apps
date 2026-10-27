@@ -130,10 +130,9 @@ Defaults to `true`.
 
 ### Option: `network_discovery`
 
-Advertise the host on the network using Web Services Dynamic Discovery, so it
-appears automatically under Network in Windows File Explorer. Disable this if
-you connect to the shares by hostname or IP address and do not want the host
-to announce itself on the network.
+Advertise the host on the network using DNS-SD/mDNS and WS-Discovery. Disable
+this if you connect to the shares by hostname or IP address and do not want the
+host to announce itself on the network.
 
 Disabling this has no effect on share availability; only on discovery.
 
