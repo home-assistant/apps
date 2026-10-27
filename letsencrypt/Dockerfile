@@ -4,6 +4,9 @@ FROM $BUILD_FROM
 # Allow pip to install packages system-wide on Debian
 ENV PIP_BREAK_SYSTEM_PACKAGES=1
 
+# Log the full date next to the time, bashio defaults to "%T" (time only)
+ENV LOG_TIMESTAMP="%Y-%m-%d %H:%M:%S"
+
 # setup base
 # certbot-dns-multi replaces most individual DNS plugins using lego
 # Only legacy plugins are kept for providers not supported by lego: gehirn, eurodns, noris

@@ -28,6 +28,18 @@ TEST_CERT=$(bashio::config 'test_cert')
 VERBOSE=$(bashio::config 'verbose')
 FORCE_RENEW=$(bashio::config 'force_renew')
 
+# Prefix each line of a command's output with a timestamp, so certbot's output
+# is dated like the bashio::log messages around it. bashio writes to $LOG_FD,
+# a dup of the original stdout, so this only wraps the given command.
+timestamped() {
+    "$@" 2>&1 | while IFS= read -r line; do
+        printf '[%s] %s\n' "$(date +"${LOG_TIMESTAMP:-%Y-%m-%d %H:%M:%S}")" "${line}"
+    done
+    # The while loop always succeeds, so report the wrapped command's status instead.
+    local status="${PIPESTATUS[0]}"
+    return "${status}"
+}
+
 # Legacy providers not supported by lego/certbot-dns-multi
 LEGACY_PROVIDERS="dns-eurodns dns-gehirn dns-noris"
 
@@ -636,7 +648,7 @@ if bashio::config.has_value 'eab_kid' ; then
 fi
 
 # Generate a new certificate if necessary or expand a previous certificate if domains has changed
-certbot certonly --non-interactive --keep-until-expiring --expand \
+timestamped certbot certonly --non-interactive --keep-until-expiring --expand \
     --email "$EMAIL" --agree-tos \
     "${KEY_ARGUMENTS[@]}" \
     "${ADDITIONAL_ARGS[@]}" \
