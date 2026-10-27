@@ -52,6 +52,7 @@ dns-digitalocean
 dns-directadmin
 dns-dnsimple
 dns-dnsmadeeasy
+dns-dnsservices
 dns-domainoffensive
 dns-dreamhost
 dns-duckdns
@@ -118,6 +119,8 @@ dns_multi_nameservers: ''
 dnsimple_token: ''
 dnsmadeeasy_api_key: ''
 dnsmadeeasy_secret_key: ''
+dnsservices_password: ''
+dnsservices_username: ''
 domainoffensive_token: ''
 dreamhost_api_key: ''
 duckdns_token: ''
@@ -659,6 +662,28 @@ Use of this plugin requires a configuration file containing DNS Made Easy API cr
 
 </details>
 
+<details>
+  <summary>dnsmadeeasy</summary>
+
+Use of this plugin requires a configuration file containing DNS.Services credentials, obtained from your DNS.services [account page](https://dns.services/clientarea/domains/).
+
+```yaml
+  email: your.email@example.com
+  domains:
+    - your.domain.tld
+  certfile: fullchain.pem
+  keyfile: privkey.pem
+  challenge: dns
+  dns:
+    provider: dns-dnsservices
+    dnsservices_password: dnsservices-password
+    dnsservices_username: dnsservices-username
+```
+
+[Full Documentation](https://go-acme.github.io/lego/dns/dnsservices/)
+[Documentation in danish](https://dns.services/knowledgebase/article/38/acme-sh-acme-protokol-support-til-certifikatudstedelse/)
+
+</details>
 <details>
   <summary>domainoffensive</summary>
 
@@ -1539,6 +1564,7 @@ dns-digitalocean
 dns-directadmin
 dns-dnsimple
 dns-dnsmadeeasy
+dns-dnsservices
 dns-domainoffensive
 dns-dreamhost
 dns-duckdns

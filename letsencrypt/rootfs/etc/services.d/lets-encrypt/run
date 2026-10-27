@@ -119,6 +119,7 @@ if [ "${CHALLENGE}" == "dns" ]; then
             ["dns-directadmin"]="directadmin"
             ["dns-dnsimple"]="dnsimple"
             ["dns-dnsmadeeasy"]="dnsmadeeasy"
+            ["dns-dnsservices"]="dnsservices"
             ["dns-domainoffensive"]="dode"
             ["dns-dreamhost"]="dreamhost"
             ["dns-duckdns"]="duckdns"
@@ -255,7 +256,13 @@ if [ "${CHALLENGE}" == "dns" ]; then
             echo "DNSMADEEASY_API_KEY=$(bashio::config 'dns.dnsmadeeasy_api_key')" >> "${DNS_MULTI_CREDS}"
             echo "DNSMADEEASY_API_SECRET=$(bashio::config 'dns.dnsmadeeasy_secret_key')" >> "${DNS_MULTI_CREDS}"
             ;;
-
+        # DNS.Services
+        'dns-dnsservices')
+            bashio::config.require 'dns.dnsservices_username'
+            bashio::config.require 'dns.dnsservices_password'
+            echo "DNSSERVICES_USERNAME=$(bashio::config 'dns.dnsservices_username')" >> "${DNS_MULTI_CREDS}"
+            echo "DNSSERVICES_PASSWORD=$(bashio::config 'dns.dnsservices_password')" >> "${DNS_MULTI_CREDS}"
+            ;;
         # Domain Offensive (do.de)
         'dns-domainoffensive')
             bashio::config.require 'dns.domainoffensive_token'
