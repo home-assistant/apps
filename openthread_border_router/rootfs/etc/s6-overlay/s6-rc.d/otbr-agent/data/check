@@ -1,9 +1,0 @@
-#!/bin/bash
-set -e
-
-# Check if openthread socket exists
-test -S /run/openthread-wpan0.sock
-
-# Check REST API port is open
-mapfile -t < /tmp/otbr-agent-rest-api
-nc -z "${MAPFILE[@]}"

@@ -26,6 +26,10 @@ apps:
     repository: home-assistant/app-mosquitto
     target: mosquitto
     image: ghcr.io/home-assistant/app-mosquitto
+  openthread_border_router:
+    repository: home-assistant/app-openthread-border-router
+    target: openthread_border_router
+    image: ghcr.io/home-assistant/app-openthread-border-router
   ssh:
     repository: home-assistant/app-ssh
     target: ssh

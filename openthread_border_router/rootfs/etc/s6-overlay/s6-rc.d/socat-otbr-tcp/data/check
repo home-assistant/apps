@@ -1,4 +1,0 @@
-#!/bin/sh
-
-test -c /tmp/ttyOTBR
-exit
