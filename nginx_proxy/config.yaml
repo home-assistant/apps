@@ -25,6 +25,7 @@ options:
     active: false
     default: nginx_proxy_default*.conf
     servers: nginx_proxy/*.conf
+    root_conf: nginx_root_conf*.conf
   real_ip_from: []
 ports:
   443/tcp: 443
@@ -42,5 +43,6 @@ schema:
     active: bool
     default: str
     servers: str
+    root_conf: str
   real_ip_from:
     - str

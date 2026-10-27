@@ -64,7 +64,7 @@ Value for the [`Strict-Transport-Security`][hsts] HTTP header to send. If empty,
 
 ### Option `customize.active` (required)
 
-If true, additional NGINX configuration files for the default server and additional servers are read from files in the `/share` directory specified by the `default` and `servers` variables.
+If true, additional NGINX configuration files for the default server and additional servers are read from files in the `/share` directory specified by the `default`, `servers`, and `root_conf` variables.
 
 ### Option `customize.default` (required)
 
@@ -73,6 +73,10 @@ The filename of the NGINX configuration for the default server, found in the `/s
 ### Option `customize.servers` (required)
 
 The filename(s) of the NGINX configuration for the additional servers, found in the `/share` directory.
+
+### Option `customize.root_conf` (required)
+
+The filename of the NGINX configuration for additional parameters to place in the root level of the configuration file, found in the `/share` directory.
 
 ### Option `cloudflare` (optional)
 

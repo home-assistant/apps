@@ -10,6 +10,10 @@ events {
     worker_connections 1024;
 }
 
+{{- if .options.customize.active }}
+include /share/{{ .options.customize.root_conf }};
+{{- end }}
+
 http {
     map_hash_bucket_size 128;
 
