@@ -1,5 +1,14 @@
 # Changelog
 
+## 2.5.3
+
+- Voice models downloaded from Piper's catalog are left out of backups again.
+  They are moved to `/data/catalog_voices` at startup and excluded from there,
+  which keeps a catalog voice (20-110 MB each) out of every backup while
+  uploaded voices, which exist nowhere else, stay in. A model is only moved
+  when its md5 matches the catalog's, so a custom voice that reuses a catalog
+  name is still backed up
+
 ## 2.5.2
 
 - Upgrade to `wyoming-piper` 2.5.2

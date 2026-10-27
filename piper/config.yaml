@@ -1,5 +1,5 @@
 ---
-version: 2.5.2
+version: 2.5.3
 slug: piper
 name: Piper
 description: Text-to-speech with Piper
@@ -10,11 +10,11 @@ arch:
 init: false
 discovery:
   - wyoming
-# Voice models ("*.onnx") used to be excluded, back when /data held nothing but
-# re-downloadable copies of catalog voices. The web interface now uploads and
-# deletes voices there, so which models are present is the user's own choice and
-# has to survive a backup -- an uploaded voice exists nowhere else. Only the
-# genuinely disposable caches below are skipped.
+# Voice models ("*.onnx") used to be excluded wholesale, back when /data held
+# nothing but re-downloadable copies of catalog voices. The web interface now
+# uploads and deletes voices there, so which models are present is the user's
+# own choice and has to survive a backup -- an uploaded voice exists nowhere
+# else. Only what can be fetched again is skipped.
 backup_exclude:
   # OmniVoice weights, 632 MB. The 1.5 MB graph beside them is kept, but the
   # backend needs both files, so a restore without the weights just downloads
@@ -24,6 +24,11 @@ backup_exclude:
   - "*/hub"
   # Wheel cache for the optional packs, rebuilt on demand.
   - "*/uv-cache"
+  # Voice models that came from the catalog, moved here at startup by
+  # sort_catalog_voices.py precisely so they can be excluded. A model is only
+  # put here when its md5 matches the catalog's, which makes it a copy of a
+  # file that is still published; uploads stay in /data and stay in backups.
+  - "*/catalog_voices"
 map:
   - share
 ingress: true
