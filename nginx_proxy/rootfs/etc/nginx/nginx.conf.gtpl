@@ -2,6 +2,21 @@
     Options saved in the Home Assistant UI are available in .options
     Some variables are available in .variables, these are added in nginx/run
 */}}
+{{- define "proxy_to_home_assistant" }}
+            {{- if .options.use_ssl_backend }}
+            proxy_pass https://homeassistant.local.hass.io:{{ .variables.port }};
+            {{- else }}
+            proxy_pass http://homeassistant.local.hass.io:{{ .variables.port }};
+            {{- end }}
+            proxy_set_header Origin $http_origin;
+            proxy_set_header X-Forwarded-Proto $scheme;
+            proxy_set_header Host $forward_host;
+            proxy_redirect http:// https://;
+            proxy_http_version 1.1;
+            proxy_set_header Upgrade $http_upgrade;
+            proxy_set_header Connection $connection_upgrade;
+            proxy_set_header X-Forwarded-Host $forward_host;
+{{- end }}
 daemon off;
 error_log stderr;
 pid /var/run/nginx.pid;
@@ -54,6 +69,10 @@ http {
         listen 443 quic reuseport default_server;
         listen [::]:443 quic reuseport default_server;
         http3 on;
+        {{- end }}
+        {{- if .variables.mtls }}
+        listen 8443 ssl default_server;
+        listen [::]:8443 ssl default_server;
         {{- end }}
         ssl_reject_handshake on;
         return 444;
@@ -123,19 +142,7 @@ http {
         {{- end }}
 
         location / {
-            {{- if .options.use_ssl_backend }}
-            proxy_pass https://homeassistant.local.hass.io:{{ .variables.port }};
-            {{- else }}
-            proxy_pass http://homeassistant.local.hass.io:{{ .variables.port }};
-            {{- end }}
-            proxy_set_header Origin $http_origin;
-            proxy_set_header X-Forwarded-Proto $scheme;
-            proxy_set_header Host $forward_host;
-            proxy_redirect http:// https://;
-            proxy_http_version 1.1;
-            proxy_set_header Upgrade $http_upgrade;
-            proxy_set_header Connection $connection_upgrade;
-            proxy_set_header X-Forwarded-Host $forward_host;
+            {{- template "proxy_to_home_assistant" . }}
             {{- if not .options.real_ip_from }}
             proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
             {{- else }}
@@ -144,6 +151,60 @@ http {
             {{- end }}
         }
     }
+
+    {{- if .variables.mtls }}
+
+    # Client certificate (mTLS) port: TCP only and separate from the main
+    # listener, so browsers on the main port never get a certificate request.
+    server {
+        server_name {{ .options.domain }};
+
+        listen 8443 ssl;
+        listen [::]:8443 ssl;
+        http2 on;
+
+        ssl_session_timeout 1d;
+        ssl_session_cache shared:MTLS:10m;
+        ssl_session_tickets off;
+        ssl_certificate /ssl/{{ .options.certfile }};
+        ssl_certificate_key /ssl/{{ .options.keyfile }};
+        ssl_dhparam /data/dhparams.pem;
+
+        ssl_client_certificate /ssl/{{ .options.mtls_client_ca }};
+        ssl_verify_client on;
+
+        {{- if .options.mtls_real_ip_header }}
+        # Every peer here has proven a trusted client certificate.
+        set_real_ip_from 0.0.0.0/0;
+        set_real_ip_from ::/0;
+        real_ip_header {{ .options.mtls_real_ip_header }};
+        {{- end }}
+
+        {{- if .options.hsts }}
+        add_header Strict-Transport-Security "{{ .options.hsts }}" always;
+        {{- end }}
+
+        proxy_buffering off;
+
+        {{- if ne .options.client_max_body_size_megabytes nil }}
+        client_max_body_size {{ .options.client_max_body_size_megabytes }}m;
+        {{- end }}
+
+        {{- if .options.customize.active }}
+        include /share/{{ .options.customize.default }};
+        {{- end }}
+
+        location / {
+            {{- template "proxy_to_home_assistant" . }}
+            {{- if .options.mtls_real_ip_header }}
+            proxy_set_header X-Real-IP $remote_addr;
+            proxy_set_header X-Forwarded-For $remote_addr;
+            {{- else }}
+            proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+            {{- end }}
+        }
+    }
+    {{- end }}
 
     {{- if .options.customize.active }}
     include /share/{{ .options.customize.servers }};

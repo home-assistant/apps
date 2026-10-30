@@ -12,9 +12,23 @@ if [[ -z "$QUIC_PORT" ]]; then
   QUIC_PORT=null
 fi
 
+MTLS=false
+if bashio::var.has_value "$(bashio::addon.port '8443/tcp')"; then
+  if ! bashio::config.has_value 'mtls_client_ca'; then
+    bashio::exit.nok "The client certificate (mTLS) port is enabled, but 'mtls_client_ca' is not set"
+  fi
+  if ! bashio::fs.file_exists "/ssl/$(bashio::config 'mtls_client_ca')"; then
+    bashio::exit.nok "Client certificate CA file '/ssl/$(bashio::config 'mtls_client_ca')' not found"
+  fi
+  MTLS=true
+elif bashio::config.has_value 'mtls_client_ca'; then
+  bashio::log.warning "'mtls_client_ca' is set, but the client certificate (mTLS) port is not; it stays disabled"
+fi
+
 bashio::log.info "Merging options & variables for template"
 JSON_CONF=$(jq --argjson port "$(bashio::core.port)" --argjson quic_port "$QUIC_PORT" \
-    '({options: .}) + ({variables: {port: $port, quic_port: $quic_port}})' \
+    --argjson mtls "$MTLS" \
+    '({options: .}) + ({variables: {port: $port, quic_port: $quic_port, mtls: $mtls}})' \
     /data/options.json)
 bashio::log.info "Generating nginx.conf from template in /etc/nginx/nginx.conf.gtpl"
 # shellcheck disable=SC2086

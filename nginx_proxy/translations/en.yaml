@@ -38,7 +38,21 @@ configuration:
     description: >-
       Configures Nginx to use TCP Proxy Protocol,
       specifies what IP to trust TLS upstream requests from.
+  mtls_client_ca:
+    name: Client certificate CA (mTLS port)
+    description: >-
+      CA file in the `/ssl` directory used to verify client certificates on
+      the client certificate (mTLS) port, for example the Cloudflare
+      Authenticated Origin Pulls CA. Required when that port is enabled.
+  mtls_real_ip_header:
+    name: Real IP header (mTLS port)
+    description: >-
+      Request header carrying the real client IP on the client certificate
+      (mTLS) port, for example `CF-Connecting-IP`. Only trusted on that port,
+      and only safe when the client CA issues certificates to your proxy
+      alone (never the shared Cloudflare origin-pull CA or a public CA bundle).
 network:
   443/tcp: HTTPS (SSL) Port
   443/udp: HTTP/3 (QUIC) Port, set to same as HTTPS (SSL) port to enable HTTP/3
   80/tcp: HTTP (non-SSL) Port
+  8443/tcp: HTTPS port that requires a client certificate (mTLS)

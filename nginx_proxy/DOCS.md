@@ -91,10 +91,32 @@ If specified, configures Nginx to use Proxy Protocol to get the Real Ip from an 
 
 If specified, configures Nginx to use HTTP/3 with QUIC/UDP on this UDP port in addition to HTTP/2 and HTTP/1.1 on the TCP port; [for more information](https://nginx.org/en/docs/http/ngx_http_v3_module.html).
 
+### Port `HTTPS port that requires a client certificate (mTLS)` (optional)
+
+If specified, Nginx serves Home Assistant on this additional TCP port and only forwards requests from clients that present a certificate signed by the CA in `mtls_client_ca` (`ssl_verify_client on`); other clients get `400 Bad Request` and never reach Home Assistant. The main HTTPS port is unchanged and never asks for a client certificate. The port is TCP only (no HTTP/3).
+
+A typical use is [Cloudflare Authenticated Origin Pulls][cf-aop]: forward your router's WAN port only to this port, so only Cloudflare (with its origin-pull certificate) can reach Home Assistant from the internet, while devices on your network keep using the main port. The app refuses to start if the port is set without a CA file. The `customize.default` file applies to both ports; use `$server_port` in it for a rule that should apply to one port only.
+
+### Option `mtls_client_ca` (optional)
+
+The CA certificate file in the `/ssl` directory used to verify client certificates on the mTLS port. For Cloudflare, download the origin-pull CA certificate from the Cloudflare documentation, or use the CA of the certificate you uploaded for per-zone or per-hostname origin pulls. A per-zone or per-hostname certificate is stronger: the shared Cloudflare certificate is presented for every Cloudflare customer, so it proves the request came through Cloudflare, not through your account.
+
+### Option `mtls_real_ip_header` (optional)
+
+The request header that carries the real client IP on the mTLS port, for example `CF-Connecting-IP` for Cloudflare. It is trusted only on the mTLS port, where every client has a verified certificate, and is sent to Home Assistant as `X-Forwarded-For`, so `ip_ban_enabled` and the login attempt notifications show the real address. If not set, the mTLS port forwards `X-Forwarded-For` like the main port. Only set it when `mtls_client_ca` issues certificates to your proxy alone (such as the CA of your Cloudflare per-zone or per-hostname origin-pull certificate, or your own private CA), never the shared Cloudflare origin-pull CA or a public CA bundle: anyone holding a certificate from that CA could otherwise set the header and pose as any client address.
+
+Example for Cloudflare Authenticated Origin Pulls, with the router forwarding WAN port 443 to this port:
+
+```yaml
+mtls_client_ca: cloudflare_origin_pull_ca.pem
+mtls_real_ip_header: CF-Connecting-IP
+```
+
 ## Known issues and limitations
 
 - By default, port 80 is disabled in the app configuration in case the port is needed for other components or apps like `emulated_hue`.
 - With HTTP/3 (QUIC), Nginx cannot forward the port of the address used by the client to Home Assistant (the `Host` and `X-Forwarded-Host` headers contain the hostname without port). If Home Assistant is reachable on a non-default port (anything other than 443), this breaks features which validate the request host and port against the configured external URL, such as the OAuth2 discovery endpoints used by MCP clients. Regular browser and app logins are not affected. To avoid this, use the default port 443 or disable HTTP/3.
+- Do not add `ssl_verify_client` (for example `optional`) to the main port through the `customize` files while HTTP/3 is enabled: a browser that loaded the page over HTTP/3 never answers the certificate request, and its WebSocket connection over TCP then fails silently. Use the mTLS port instead, which keeps client certificate requests away from the main port.
 
 ## Troubleshooting
 
@@ -117,5 +139,6 @@ In case you've found a bug, please [open an issue on our GitHub][issue].
 [forum]: https://community.home-assistant.io
 [hsts]: https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Strict-Transport-Security
 [issue]: https://github.com/home-assistant/addons/issues
+[cf-aop]: https://developers.cloudflare.com/ssl/origin-configuration/authenticated-origin-pull/
 [reddit]: https://reddit.com/r/homeassistant
 [repository]: https://github.com/hassio-addons/repository

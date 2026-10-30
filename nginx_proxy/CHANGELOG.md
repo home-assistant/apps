@@ -1,5 +1,9 @@
 # Changelog
 
+## 4.6.0
+
+- Add an optional second HTTPS port that requires a client certificate (mTLS), for example for Cloudflare Authenticated Origin Pulls, with an optional trusted real IP header on that port only
+
 ## 4.5.1
 
 - Fix nginx failing to start when the client max body size option is present (`incompatible types for comparison` in the config template)
