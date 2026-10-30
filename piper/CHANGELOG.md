@@ -1,5 +1,11 @@
 # Changelog
 
+## 2.5.3
+
+- Stream ingress uploads (`ingress_stream: true`) so voice uploads larger
+  than 16 MiB through the web interface no longer fail with HTTP 413. Typical
+  medium-quality voices are around 60 MB
+
 ## 2.5.2
 
 - Upgrade to `wyoming-piper` 2.5.2

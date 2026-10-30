@@ -1,5 +1,5 @@
 ---
-version: 2.5.2
+version: 2.5.3
 slug: piper
 name: Piper
 description: Text-to-speech with Piper
@@ -27,6 +27,7 @@ backup_exclude:
 map:
   - share
 ingress: true
+ingress_stream: true
 ingress_port: 8099
 panel_icon: mdi:account-voice
 panel_title: Piper voices
