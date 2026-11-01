@@ -11,6 +11,6 @@ permissions:
 
 jobs:
   update:
-    uses: home-assistant/workflows/.github/workflows/repository-updater.yaml@92e9026c1e243a255d150a449a769c9fa1ebda18 # v0.1.0
+    uses: home-assistant/workflows/.github/workflows/repository-updater.yaml@43290e4d60baf0ff53555e1766aa0d4ec5cb3a89 # v0.1.1
     secrets:
       UPDATER_TOKEN: ${{ secrets.UPDATER_TOKEN }}
