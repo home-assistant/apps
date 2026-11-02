@@ -10,6 +10,7 @@ ignore: |
   /matter_server/config.yaml
   /mosquitto/config.yaml
   /openthread_border_router/config.yaml
+  /rpc_shutdown/config.yaml
   /ssh/config.yaml
   /vlc/config.yaml
   /zwave_js/config.yaml
