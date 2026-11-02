@@ -34,6 +34,10 @@ apps:
     repository: home-assistant/app-rpc-shutdown
     target: rpc_shutdown
     image: ghcr.io/home-assistant/app-rpc-shutdown
+  silabs_flasher:
+    repository: home-assistant/app-silabs-flasher
+    target: silabs_flasher
+    image: ghcr.io/home-assistant/app-silabs-flasher
   ssh:
     repository: home-assistant/app-ssh
     target: ssh
