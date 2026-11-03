@@ -11,6 +11,7 @@ ignore: |
   /mariadb/config.yaml
   /matter_server/config.yaml
   /mosquitto/config.yaml
+  /nginx_proxy/config.yaml
   /openthread_border_router/config.yaml
   /rpc_shutdown/config.yaml
   /silabs_flasher/config.yaml
