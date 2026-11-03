@@ -1,6 +1,0 @@
----
-build_from:
-  aarch64: ghcr.io/home-assistant/aarch64-base-python:3.13-alpine3.23
-  amd64: ghcr.io/home-assistant/amd64-base-python:3.13-alpine3.23
-args:
-  UNIVERSAL_SILABS_FLASHER: 0.0.37

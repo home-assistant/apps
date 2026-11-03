@@ -1,5 +1,13 @@
 # Changelog
 
+## 9.3.0
+
+- Update [Matter Server from 1.4.0 to 1.5.5](https://github.com/matter-js/matterjs-server/blob/main/CHANGELOG.md)
+  - Supports Matter 1.6.1 with many optimizations and fixes to the Matter stack
+  - Add a convenient camera API for WebRTC stream management
+  - Many new Dashboard cluster command panels and endpoint label/semantic tag display
+  - Multiple Optimizations and Fixes in WebRTC/camera handling and node availability reporting
+
 ## 9.2.0
 
 - Update [Matter Server from 1.3.3 to 1.4.0](https://github.com/matter-js/matterjs-server/blob/main/CHANGELOG.md)

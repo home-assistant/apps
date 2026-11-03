@@ -10,6 +10,10 @@ apps:
     repository: home-assistant/app-configurator
     target: configurator
     image: ghcr.io/home-assistant/app-configurator
+  dnsmasq:
+    repository: home-assistant/app-dnsmasq
+    target: dnsmasq
+    image: ghcr.io/home-assistant/app-dnsmasq
   git_pull:
     repository: home-assistant/app-git-pull
     target: git_pull
@@ -30,6 +34,14 @@ apps:
     repository: home-assistant/app-openthread-border-router
     target: openthread_border_router
     image: ghcr.io/home-assistant/app-openthread-border-router
+  rpc_shutdown:
+    repository: home-assistant/app-rpc-shutdown
+    target: rpc_shutdown
+    image: ghcr.io/home-assistant/app-rpc-shutdown
+  silabs_flasher:
+    repository: home-assistant/app-silabs-flasher
+    target: silabs_flasher
+    image: ghcr.io/home-assistant/app-silabs-flasher
   ssh:
     repository: home-assistant/app-ssh
     target: ssh

@@ -48,18 +48,18 @@ flag installs the latest `matter-server` from npm on top of it, and
 
 App configuration:
 
-| Configuration        | Description                                                                                             |
-|----------------------|---------------------------------------------------------------------------------------------------------|
-| log_level            | Logging level of the Matter Server component.                                                           |
-| beta                 | Install the latest `matter-server` from npm on startup instead of the bundled version. On failure a warning is logged and the bundled version is started. |
-| enable_test_net_dcl  | Enable test-net DCL for PAA root certificates, OTA updates and other device information.                |
-| time_sync            | Whether the Matter Server pushes the current time to Matter devices: `auto` (default; on only when the host clock is NTP synchronized), `on` (always; warns if NTP is not synchronized), or `off`. |
-| default_fabric_label | Pin the fabric label (shown on Matter devices, max 32 characters) to this value. By default the Home Assistant home name is used. This is useful if the Matter Server is used from multiple Home Assistant instances, which otherwise each keep pushing their own home name as the label. When set, changing the label via the WebSocket API is blocked. |
-| ble_proxy            | Expose the BLE proxy endpoint so the Home Assistant Matter integration can drive BLE commissioning through Home Assistant's bluetooth stack. Mutually exclusive with `bluetooth_adapter_id`. |
-| bluetooth_adapter_id | **Deprecated** — use `ble_proxy` instead. Set BlueZ Bluetooth Controller ID (for local commissioning). Still works for now. |
-| matter_server_args   | Extra command-line arguments passed to the Matter Server at startup (advanced).                         |
-| matter_server_env_vars | Extra environment variables exported before the server starts. Use `KEY=VALUE` entries. |
-| matter_server_version | Install this specific `matter-server` version from npm (advanced; takes precedence over **Beta**). Values with a major version >= 3 are ignored (these are Python Matter Server versions); unless **Beta** is set, the bundled version is used. |
+| Configuration          | Description                                                                                                                                                                                                                                                                                                                                              |
+| ---------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| log_level              | Logging level of the Matter Server component.                                                                                                                                                                                                                                                                                                            |
+| beta                   | Install the latest `matter-server` from npm on startup instead of the bundled version. On failure a warning is logged and the bundled version is started.                                                                                                                                                                                                |
+| enable_test_net_dcl    | Enable test-net DCL for PAA root certificates, OTA updates and other device information.                                                                                                                                                                                                                                                                 |
+| time_sync              | Whether the Matter Server pushes the current time to Matter devices: `auto` (default; on only when the host clock is NTP synchronized), `on` (always; warns if NTP is not synchronized), or `off`.                                                                                                                                                       |
+| default_fabric_label   | Pin the fabric label (shown on Matter devices, max 32 characters) to this value. By default the Home Assistant home name is used. This is useful if the Matter Server is used from multiple Home Assistant instances, which otherwise each keep pushing their own home name as the label. When set, changing the label via the WebSocket API is blocked. |
+| ble_proxy              | Expose the BLE proxy endpoint so the Home Assistant Matter integration can drive BLE commissioning through Home Assistant's bluetooth stack. Mutually exclusive with `bluetooth_adapter_id`.                                                                                                                                                             |
+| bluetooth_adapter_id   | **Deprecated** — use `ble_proxy` instead. Set BlueZ Bluetooth Controller ID (for local commissioning). Still works for now.                                                                                                                                                                                                                              |
+| matter_server_args     | Extra command-line arguments passed to the Matter Server at startup (advanced).                                                                                                                                                                                                                                                                          |
+| matter_server_env_vars | Extra environment variables exported before the server starts. Use `KEY=VALUE` entries.                                                                                                                                                                                                                                                                  |
+| matter_server_version  | Install this specific `matter-server` version from npm (advanced; takes precedence over **Beta**). Values with a major version >= 3 are ignored (these are Python Matter Server versions); unless **Beta** is set, the bundled version is used.                                                                                                          |
 
 ### `matter_server_env_vars`
 
@@ -86,6 +86,6 @@ In case you've found a bug, please [open an issue on our GitHub][issue].
 [discord]: https://www.home-assistant.io/join-chat
 [forum]: https://community.home-assistant.io
 [reddit]: https://reddit.com/r/homeassistant
-[issue]: https://github.com/home-assistant/addons/issues
+[issue]: https://github.com/home-assistant/app-matter-server/issues
 [matter_server_repo]: https://github.com/matter-js/matterjs-server
 [matter_integration]: https://www.home-assistant.io/integrations/matter/
