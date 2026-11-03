@@ -10,6 +10,10 @@ apps:
     repository: home-assistant/app-configurator
     target: configurator
     image: ghcr.io/home-assistant/app-configurator
+  deconz:
+    repository: home-assistant/app-deconz
+    target: deconz
+    image: ghcr.io/home-assistant/app-deconz
   dnsmasq:
     repository: home-assistant/app-dnsmasq
     target: dnsmasq
