@@ -5,6 +5,7 @@ extends: default
 ignore: |
   /cec_scan/config.yaml
   /configurator/config.yaml
+  /deconz/config.yaml
   /dnsmasq/config.yaml
   /git_pull/config.yaml
   /mariadb/config.yaml
