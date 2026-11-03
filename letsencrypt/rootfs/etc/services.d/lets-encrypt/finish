@@ -1,7 +1,0 @@
-#!/usr/bin/env bashio
-# vim: ft=bash
-# ==============================================================================
-# Take down the S6 supervision tree when service is done
-# ==============================================================================
-/run/s6/basedir/bin/halt
-

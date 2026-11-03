@@ -22,6 +22,10 @@ apps:
     repository: home-assistant/app-git-pull
     target: git_pull
     image: ghcr.io/home-assistant/app-git-pull
+  letsencrypt:
+    repository: home-assistant/app-letsencrypt
+    target: letsencrypt
+    image: ghcr.io/home-assistant/app-letsencrypt
   mariadb:
     repository: home-assistant/app-mariadb
     target: mariadb
