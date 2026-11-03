@@ -12,6 +12,7 @@ ignore: |
   /matter_server/config.yaml
   /mosquitto/config.yaml
   /openthread_border_router/config.yaml
+  /openwakeword/config.yaml
   /rpc_shutdown/config.yaml
   /silabs_flasher/config.yaml
   /ssh/config.yaml

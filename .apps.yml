@@ -38,6 +38,10 @@ apps:
     repository: home-assistant/app-openthread-border-router
     target: openthread_border_router
     image: ghcr.io/home-assistant/app-openthread-border-router
+  openwakeword:
+    repository: home-assistant/app-openwakeword
+    target: openwakeword
+    image: ghcr.io/home-assistant/app-openwakeword
   rpc_shutdown:
     repository: home-assistant/app-rpc-shutdown
     target: rpc_shutdown
