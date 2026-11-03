@@ -8,6 +8,7 @@ ignore: |
   /deconz/config.yaml
   /dnsmasq/config.yaml
   /git_pull/config.yaml
+  /letsencrypt/config.yaml
   /mariadb/config.yaml
   /matter_server/config.yaml
   /mosquitto/config.yaml
