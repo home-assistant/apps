@@ -78,6 +78,10 @@ apps:
     repository: home-assistant/app-vlc
     target: vlc
     image: ghcr.io/home-assistant/app-vlc
+  whisper:
+    repository: home-assistant/app-whisper
+    target: whisper
+    image: ghcr.io/home-assistant/app-whisper
   zwave_js:
     repository: home-assistant/app-zwave-js
     target: zwave_js

@@ -22,4 +22,5 @@ ignore: |
   /speech_to_phrase/config.yaml
   /ssh/config.yaml
   /vlc/config.yaml
+  /whisper/config.yaml
   /zwave_js/config.yaml
