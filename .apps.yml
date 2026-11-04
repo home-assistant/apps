@@ -50,6 +50,10 @@ apps:
     repository: home-assistant/app-rpc-shutdown
     target: rpc_shutdown
     image: ghcr.io/home-assistant/app-rpc-shutdown
+  samba:
+    repository: home-assistant/app-samba
+    target: samba
+    image: ghcr.io/home-assistant/app-samba
   silabs_flasher:
     repository: home-assistant/app-silabs-flasher
     target: silabs_flasher
