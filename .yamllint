@@ -17,6 +17,7 @@ ignore: |
   /openthread_border_router/config.yaml
   /openwakeword/config.yaml
   /rpc_shutdown/config.yaml
+  /samba/config.yaml
   /silabs_flasher/config.yaml
   /ssh/config.yaml
   /vlc/config.yaml
