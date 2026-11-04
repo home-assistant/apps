@@ -16,6 +16,7 @@ ignore: |
   /nginx_proxy/config.yaml
   /openthread_border_router/config.yaml
   /openwakeword/config.yaml
+  /piper/config.yaml
   /rpc_shutdown/config.yaml
   /samba/config.yaml
   /silabs_flasher/config.yaml
