@@ -18,6 +18,10 @@ apps:
     repository: home-assistant/app-dnsmasq
     target: dnsmasq
     image: ghcr.io/home-assistant/app-dnsmasq
+  duckdns:
+    repository: home-assistant/app-duckdns
+    target: duckdns
+    image: ghcr.io/home-assistant/app-duckdns
   git_pull:
     repository: home-assistant/app-git-pull
     target: git_pull
