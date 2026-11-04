@@ -18,4 +18,5 @@ ignore: |
   /silabs_flasher/config.yaml
   /ssh/config.yaml
   /vlc/config.yaml
+  /whisper/config.yaml
   /zwave_js/config.yaml
