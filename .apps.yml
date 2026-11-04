@@ -54,6 +54,10 @@ apps:
     repository: home-assistant/app-silabs-flasher
     target: silabs_flasher
     image: ghcr.io/home-assistant/app-silabs-flasher
+  speech_to_phrase:
+    repository: home-assistant/app-speech-to-phrase
+    target: speech_to_phrase
+    image: ghcr.io/home-assistant/app-speech-to-phrase
   ssh:
     repository: home-assistant/app-ssh
     target: ssh

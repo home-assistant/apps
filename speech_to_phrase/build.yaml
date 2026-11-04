@@ -1,8 +1,0 @@
----
-build_from:
-  amd64: ghcr.io/home-assistant/amd64-base-debian:trixie
-  aarch64: ghcr.io/home-assistant/aarch64-base-debian:trixie
-args:
-  SPEECH_TO_PHRASE_VERSION: 1.4.3
-  ONNXRUNTIME_VERSION: 1.29.0
-  PYSILERO_VAD_VERSION: 2.1.1

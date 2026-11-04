@@ -16,6 +16,7 @@ ignore: |
   /openwakeword/config.yaml
   /rpc_shutdown/config.yaml
   /silabs_flasher/config.yaml
+  /speech_to_phrase/config.yaml
   /ssh/config.yaml
   /vlc/config.yaml
   /zwave_js/config.yaml
