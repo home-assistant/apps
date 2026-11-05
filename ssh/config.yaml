@@ -1,30 +1,29 @@
----
-version: 10.5.0
+version: 10.6.0
 slug: ssh
 name: Terminal & SSH
 description: Allow logging in remotely to Home Assistant using SSH
-url: https://github.com/home-assistant/addons/tree/master/ssh
+url: https://github.com/home-assistant/app-ssh
 arch:
-  - aarch64
-  - amd64
+- aarch64
+- amd64
 audio: true
 hassio_api: true
 hassio_role: manager
 host_dbus: true
-image: homeassistant/{arch}-addon-ssh
+image: ghcr.io/home-assistant/app-ssh
 ingress: true
 init: false
 map:
-  - local_apps:rw
-  - all_app_configs:rw
-  - backup:rw
-  - homeassistant_config:rw
-  - media:rw
-  - share:rw
-  - ssl:rw
+- local_apps:rw
+- all_app_configs:rw
+- backup:rw
+- homeassistant_config:rw
+- media:rw
+- share:rw
+- ssl:rw
 options:
   authorized_keys: []
-  password: ""
+  password: ''
   apks: []
   server:
     tcp_forwarding: false
@@ -34,10 +33,10 @@ ports:
   22/tcp: null
 schema:
   authorized_keys:
-    - str
+  - str
   password: password
   apks:
-    - str
+  - str
   server:
     tcp_forwarding: bool
 startup: services

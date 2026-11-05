@@ -29,16 +29,20 @@ ha help
 You can access the web terminal by clicking the "Open Web UI" button on this app's Info tab. If you set the "Show in sidebar" setting (found on the same Info tab) to "on", a shortcut is added to the sidebar allowing you to access the web terminal quickly.
 
 To copy text from the Web UI:
+
 1. Hold down the SHIFT key.
 2. Select the text you want to copy using your mouse.
 3. On releasing the left mouse button, the text gets copied to your system clipboard.
 
 To paste text into the Web UI:
+
 1. Press SHIFT + INSERT.
+
+The web terminal has screen reader support turned on. Screen readers read the text you type and new output as it appears. The visible rows of the terminal are also available as a list that you can read line by line with your screen reader's reading cursor. When a command prints a lot of output, the terminal stops reading it out after about 20 lines; use the reading cursor to read the rest.
 
 ### SSH Server Connection
 
-Remote SSH access from the network is disabled by default (See Network below).  To connect using an SSH client, such as PuTTY or Linux terminal, you need to supply additional configuration for this app. To enable SSH connectivity, you need to:
+Remote SSH access from the network is disabled by default (See Network below). To connect using an SSH client, such as PuTTY or Linux terminal, you need to supply additional configuration for this app. To enable SSH connectivity, you need to:
 
 - Provide authentication credentials - a password or SSH key(s)
 - Specify which TCP port to bind to, on the Home Assistant host
@@ -58,7 +62,7 @@ App configuration:
 ```yaml
 authorized_keys:
   - "ssh-rsa AKDJD3839...== my-key"
-password: ''
+password: ""
 apks: []
 server:
   tcp_forwarding: false
@@ -78,7 +82,7 @@ If you get errors when adding your key, it is likely that the public key you're 
 
 Set a password for login. **We do NOT recommend this variant**.
 
-### Option group  `server`
+### Option group `server`
 
 Some SSH server options.
 
@@ -113,7 +117,7 @@ In case you've found a bug, please [open an issue on our GitHub][issue].
 
 [discord]: https://www.home-assistant.io/join-chat
 [forum]: https://community.home-assistant.io
-[issue]: https://github.com/home-assistant/addons/issues
+[issue]: https://github.com/home-assistant/app-ssh/issues
 [keygen-windows]: https://www.digitalocean.com/community/tutorials/how-to-create-ssh-keys-with-putty-to-connect-to-a-vps
 [keygen]: https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent
 [reddit]: https://reddit.com/r/homeassistant

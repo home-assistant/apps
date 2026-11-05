@@ -1,5 +1,14 @@
 # Changelog
 
+## 10.6.0
+
+This release updates OpenSSH to 10.3_p1-r2, which fixes a password authentication bypass in the SSH server ([see OpenSSH release notes](https://www.openssh.org/releasenotes.html#10.6p2)). Note that the issue should not be exploitable with the default setup of this app, even when password authentication is enabled.
+
+- Update base image to 3.24-2026.10.3
+- Enable screen reader mode in the web terminal
+- Update home-assistant/cli to v5.6.0
+- Publish app to GHCR
+
 ## 10.5.0
 
 - Update Home Assistant CLI to 5.5.0
