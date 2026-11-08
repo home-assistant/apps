@@ -17,6 +17,13 @@
 - Declare the `/dev/net/tun` device used by OpenThread Border Router.
 - The app image is unchanged from 2.4.5.
 
+> [!WARNING]
+> Known issue on Home Assistant OS 18 and later: `otbr_firewall: false` makes
+> the OpenThread Border Router start script call `ip6tables-legacy`, which
+> fails because the kernel no longer provides the legacy IPv6 filter table.
+> `otbr-agent` then exits with code 3 in a loop and Thread stops working.
+> Keep `otbr_firewall` set to `true` (the default).
+
 ## 2.4.5
 - Support Home Assistant Connect ZBT-1.
 

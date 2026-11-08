@@ -84,6 +84,16 @@ App configuration:
 | otbr_log_level     | Set the log level of the OpenThread BorderRouter Agent     |
 | otbr_firewall      | Enable OpenThread Border Router firewall to block unnecessary traffic |
 
+> [!WARNING]
+> On Home Assistant OS 18 and later, keep `otbr_firewall` set to `true` (the
+> default). With the firewall disabled, the OpenThread Border Router start
+> script runs `ip6tables-legacy`, which fails on these systems because the
+> kernel no longer provides the legacy IPv6 filter table. The app log then
+> repeats `ip6tables v1.8.7 (legacy): can't initialize ip6tables table
+> 'filter': Table does not exist` and `otbr-agent exited with code 3`, Thread
+> stops working while Zigbee keeps running. Re-enable the firewall and restart
+> the app to recover.
+
 ## Architecture
 
 The app runs several service internally. This architecture diagram shows what
