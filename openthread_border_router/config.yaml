@@ -1,34 +1,32 @@
----
-version: 3.3.0
-breaking_versions: [3.0.0]
+version: 3.4.0
+breaking_versions:
+- 3.0.0
 slug: openthread_border_router
 name: OpenThread Border Router
 description: OpenThread Border Router app
-url: >-
-  https://github.com/home-assistant/addons/tree/master/openthread_border_router
+url: https://github.com/home-assistant/app-openthread-border-router
 arch:
-  - aarch64
-  - amd64
+- aarch64
+- amd64
 homeassistant: 2025.7.0
 gpio: true
 hassio_api: true
 discovery:
-  - otbr
-# IPC is only used within the Add-on
-host_ipc: false
+- otbr
 host_network: true
 host_uts: true
 privileged:
-  - IPC_LOCK
-  - NET_ADMIN
-  - NET_RAW
+- IPC_LOCK
+- NET_ADMIN
+- NET_RAW
 devices:
-  - /dev/net/tun
-image: homeassistant/{arch}-addon-otbr
+- /dev/net/tun
+image: ghcr.io/home-assistant/app-openthread-border-router
 init: false
+log_format: timestamp
 options:
   device: null
-  baudrate: "460800"
+  baudrate: '460800'
   flow_control: true
   otbr_log_level: notice
   firewall: true

@@ -12,6 +12,7 @@ Follow these steps to get the app (formerly known as add-on) installed on your s
 
 You will need a 802.15.4 capable radio supported by OpenThread flashed with OpenThread
 RCP firmware:
+
 - Home Assistant Yellow
 - Home Assistant SkyConnect/Connect ZBT-1
 - Home Assistant Connect ZBT-2
@@ -59,15 +60,15 @@ and 8081 in the OpenThread REST API port field).
 
 App configuration:
 
-| Configuration      | Description                                            |
-|--------------------|--------------------------------------------------------|
-| device (mandatory) | Serial port where the OpenThread RCP Radio is attached |
-| baudrate           | Serial port baudrate (depends on firmware)   |
-| flow_control       | If hardware flow control should be enabled (depends on firmware) |
-| otbr_log_level     | Set the log level of the OpenThread BorderRouter Agent     |
-| firewall           | Enable OpenThread Border Router firewall to block unnecessary traffic |
-| nat64              | Enable NAT64 to allow Thread devices accessing IPv4 addresses |
-| network_device     | IP address and port to connect to a network-based RCP (see below) |
+| Configuration      | Description                                                                       |
+| ------------------ | --------------------------------------------------------------------------------- |
+| device (mandatory) | Serial port where the OpenThread RCP Radio is attached                            |
+| baudrate           | Serial port baudrate (depends on firmware)                                        |
+| flow_control       | If hardware flow control should be enabled (depends on firmware)                  |
+| otbr_log_level     | Set the log level of the OpenThread BorderRouter Agent                            |
+| firewall           | Enable OpenThread Border Router firewall to block unnecessary traffic             |
+| nat64              | Enable NAT64 to allow Thread devices accessing IPv4 addresses                     |
+| network_device     | IP address and port to connect to a network-based RCP (see below)                 |
 | beta               | Enable beta mode to run a newer, experimental version of OpenThread Border Router |
 
 > [!WARNING]
@@ -102,7 +103,7 @@ In case you've found a bug, please [open an issue on our GitHub][issue].
 [discord]: https://www.home-assistant.io/join-chat
 [forum]: https://community.home-assistant.io
 [reddit]: https://reddit.com/r/homeassistant
-[issue]: https://github.com/home-assistant/addons/issues
+[issue]: https://github.com/home-assistant/app-openthread-border-router/issues
 [openthread-platforms]: https://openthread.io/platforms
 [nordic-nrf52840-dongle]: https://www.nordicsemi.com/Products/Development-hardware/nrf52840-dongle
 [nordic-nrf52840-dongle-install]: https://docs.nordicsemi.com/bundle/ncs-latest/page/nrf/protocols/thread/tools.html#configuring_a_radio_co-processor

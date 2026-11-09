@@ -1,5 +1,21 @@
 # Changelog
 
+## 3.4.0
+
+- Show timestamps in app logs by default
+- Update OTBR stable to v2026.10.0
+  - Routes to external networks announced by other Border Routers in the Thread network (e.g. Apple/Google) are no longer added to the host, which avoids routing loops and mesh congestion on multi Border Router networks. Routes to Thread devices are not affected
+  - Channel changes (pending dataset) are now confirmed with the Thread leader instead of being applied locally
+  - Various fixes and stability improvements in OpenThread and OTBR
+- Update OTBR beta to v2026.11.0
+  - Fix mDNS service resolution retries and subscribe to mDNS on the interface of the request
+  - REST API: Support Enhanced Route TLV in network diagnostics
+  - Various fixes and stability improvements in OpenThread and OTBR
+- Update universal-silabs-flasher to v0.1.3
+- Update base image to trixie-2026.11.0
+- Fix app URL in config.yaml
+- Publish app to GHCR
+
 ## 3.3.0
 
 - Bump to OTBR POSIX version fd872ab9 (tag v2026.09.0)
