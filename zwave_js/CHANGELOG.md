@@ -1,5 +1,49 @@
 # Changelog
 
+## 1.11.0
+
+### Z-Wave JS 15.31.2...15.32.3
+
+#### Features
+
+- ESPHome encryption keys no longer have to be URL-encoded manually
+
+#### Bugfixes
+
+- OTA firmware updates can now be queued for multiple devices and are transferred one at a time
+- Hardened firmware update, download, extraction, and transfer
+- Hardened NVM backup and restore
+- Improved the data validation and error handling in several command handlers
+- Scene labels are now updated automatically without a re-interview
+- Fixed several issues with connections to ESPHome based Z-Wave proxies
+- Tons of smaller stability improvements
+
+#### Config file changes
+
+- Add Heatit Z-Smoke2 230V and allow Basic Set interconnects
+- Add a setpoint range of 4-28 °C to Danfoss LC-13
+- Preserve and label endpoints on Qubino Flush Dimmer Plus (ZMNHDD)
+- Remove undocumented endpoint labels on Heatit Z-Push Button 4
+- Add the missing third switch label on McoHome MH-S513
+- Group shutter endpoints on Shelly Wave Shutter (QLSH-001P10EU)
+- Correct endpoint 2 and group the blind on Qubino Flush Shutter DC (ZMNHOD)
+- Add the digital port mode and endpoint names to Quby 6500-1400-6000
+- Add endpoint labels to several Fibaro and Shelly devices
+- Add the NOVON manufacturer and five of its devices
+- Add Central Scene labels for 61 devices
+
+### Detailed changelogs
+
+- [Z-Wave JS UI 11.26.2](https://github.com/zwave-js/zwave-js-ui/releases/tag/v11.26.2)
+- [Z-Wave JS UI 11.26.1](https://github.com/zwave-js/zwave-js-ui/releases/tag/v11.26.1)
+- [Z-Wave JS UI 11.26.0](https://github.com/zwave-js/zwave-js-ui/releases/tag/v11.26.0)
+- [Z-Wave JS UI 11.25.2](https://github.com/zwave-js/zwave-js-ui/releases/tag/v11.25.2)
+- [Z-Wave JS 15.32.3](https://github.com/zwave-js/zwave-js/releases/tag/v15.32.3)
+- [Z-Wave JS 15.32.2](https://github.com/zwave-js/zwave-js/releases/tag/v15.32.2)
+- [Z-Wave JS 15.32.1](https://github.com/zwave-js/zwave-js/releases/tag/v15.32.1)
+- [Z-Wave JS 15.32.0](https://github.com/zwave-js/zwave-js/releases/tag/v15.32.0)
+- [Z-Wave JS Server 3.12.0](https://github.com/zwave-js/zwave-js-server/releases/tag/3.12.0)
+
 ## 1.10.0
 
 ### Z-Wave JS 15.31.1...15.31.2
