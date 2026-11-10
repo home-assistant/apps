@@ -1,5 +1,12 @@
 # Changelog
 
+## 6.3.1
+
+- Stop calling the Core API from the health check @kleinc80 (#11)
+- Update home-assistant/base image to 3.24-2026.11.0 @[renovate[bot]](https://github.com/apps/renovate) (#12)
+- Update home-assistant/base image to 3.24-2026.10.3 @[renovate[bot]](https://github.com/apps/renovate) (#8)
+- Drop "dependency" from Renovate PR titles for Dockerfile ARGs @sairon (#6)
+
 ## 6.3.0
 
 - Use a 5s startup healthcheck interval
