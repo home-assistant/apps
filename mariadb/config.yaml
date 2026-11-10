@@ -1,44 +1,44 @@
----
-version: 3.0.1
-breaking_versions: [3.0.0]
+version: 4.0.0
+breaking_versions:
+- 3.0.0
+- 4.0.0
 slug: mariadb
 name: MariaDB
 description: A SQL database server
-url: https://github.com/home-assistant/addons/tree/master/mariadb
+url: https://github.com/home-assistant/app-mariadb
 arch:
-  - aarch64
-  - amd64
+- aarch64
+- amd64
 backup_post: unlock-tables-for-backup
 backup_pre: lock-tables-for-backup
-image: homeassistant/{arch}-addon-mariadb
+image: ghcr.io/home-assistant/app-mariadb
 init: false
 options:
   databases:
-    - homeassistant
+  - homeassistant
   logins:
-    - password: null
-      username: homeassistant
+  - password: null
+    username: homeassistant
   rights:
-    - database: homeassistant
-      username: homeassistant
+  - database: homeassistant
+    username: homeassistant
 ports:
   3306/tcp: null
 schema:
   databases:
-    - str
+  - match(^[\w$-]{1,64}$)
   logins:
-    - username: str
-      password: password
+  - username: match(^[\w.@ -]{1,128}$)
+    password: password
   rights:
-    - database: str
-      privileges:
-        - "list(ALTER|CREATE|CREATE ROUTINE|CREATE TEMPORARY TABLES|\
-          CREATE VIEW|DELETE|DELETE HISTORY|DROP|EVENT|GRANT OPTION|INDEX|\
-          INSERT|LOCK TABLES|SELECT|SHOW VIEW|TRIGGER|UPDATE)?"
-      username: str
+  - database: match(^[\w$-]{1,64}$)
+    privileges:
+    - list(ALTER|CREATE|CREATE ROUTINE|CREATE TEMPORARY TABLES|CREATE VIEW|DELETE|DELETE
+      HISTORY|DROP|EVENT|GRANT OPTION|INDEX|INSERT|LOCK TABLES|SELECT|SHOW VIEW|TRIGGER|UPDATE)?
+    username: match(^[\w.@ -]{1,128}$)
   mariadb_server_args:
-    - str?
+  - str?
 services:
-  - mysql:provide
+- mysql:provide
 startup: system
 timeout: 300

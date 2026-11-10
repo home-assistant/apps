@@ -42,6 +42,7 @@ rights:
 ### Option: `databases` (required)
 
 Database name, e.g., `homeassistant`. Multiple are allowed.
+A name may only contain letters, digits, `_`, `$` and `-`.
 
 ### Option: `logins` (required)
 
@@ -50,6 +51,7 @@ This section defines a create user definition in MariaDB. [Create User][createus
 ### Option: `logins.username` (required)
 
 Database user login, e.g., `homeassistant`. [User Name][username] documentation.
+A user name may only contain letters, digits, spaces, `_`, `-`, `.` and `@`.
 
 ### Option: `logins.password` (required)
 
@@ -112,6 +114,6 @@ In case you've found a bug, please [open an issue on our GitHub][issue].
 [mariadb-ha-recorder]: https://www.home-assistant.io/integrations/recorder/
 [discord]: https://www.home-assistant.io/join-chat
 [forum]: https://community.home-assistant.io
-[issue]: https://github.com/home-assistant/addons/issues
+[issue]: https://github.com/home-assistant/app-mariadb/issues
 [reddit]: https://reddit.com/r/homeassistant
 [repository]: https://github.com/hassio-addons/repository

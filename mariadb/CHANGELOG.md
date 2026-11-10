@@ -1,5 +1,27 @@
 # Changelog
 
+## 4.0.0
+
+> [!IMPORTANT]
+> This update upgrades MariaDB from 11.4 to 11.8. The database migration will
+> be performed automatically on the first startup after the app is updated.
+> Make a backup of the MariaDB app before installing this update.
+>
+> Database and user names in the app configuration are now validated. Database
+> names can contain letters, digits, `_`, `$` and `-`. User names can contain
+> letters, digits, `_`, `.`, `@`, `-` and spaces. If your configuration uses
+> other characters, the app will not start after the update until you change
+> the names in the configuration.
+
+- Wait until the backup lock is held before reporting it
+- Validate database and user names, escape passwords and log setup errors
+- Update home-assistant/base image to 3.24-2026.11.0
+- Update home-assistant/base image to 3.24-2026.10.3
+- Update to Alpine 3.24 (MariaDB 11.4 to 11.8)
+- Properly close s6 notification file descriptors
+- Update base image to 3.23-2026.10.1
+- Publish app to GHCR
+
 ## 3.0.1
 
 - Fix GRANT statement generation for multiple `privileges`
