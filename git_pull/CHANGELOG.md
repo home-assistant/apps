@@ -1,5 +1,12 @@
 # Changelog
 
+## 9.1.1
+
+- git_pull: Mark deployment_key as password @agners (#9)
+- git_pull: Only use deployment_key for SSH repositories @agners (#8)
+- git_pull: Do not wipe /config when the clone fails @agners (#7)
+- Update home-assistant/base image to 3.24-2026.11.0 @[renovate[bot]](https://github.com/apps/renovate) (#5)
+
 ## 9.1.0
 
 - Update base image to Alpine 3.24
