@@ -2,12 +2,78 @@
 # yamllint disable rule:line-length
 blank_issues_enabled: false
 contact_links:
+  - name: Report a bug with the CEC Scanner app
+    url: https://github.com/home-assistant/app-cec-scan/issues
+    about: Each app has its own repository. Please report issues with the CEC Scanner app there.
+  - name: Report a bug with the deCONZ app
+    url: https://github.com/home-assistant/app-deconz/issues
+    about: Each app has its own repository. Please report issues with the deCONZ app there.
+  - name: Report a bug with the Dnsmasq app
+    url: https://github.com/home-assistant/app-dnsmasq/issues
+    about: Each app has its own repository. Please report issues with the Dnsmasq app there.
+  - name: Report a bug with the Duck DNS app
+    url: https://github.com/home-assistant/app-duckdns/issues
+    about: Each app has its own repository. Please report issues with the Duck DNS app there.
+  - name: Report a bug with the File editor app
+    url: https://github.com/home-assistant/app-configurator/issues
+    about: Each app has its own repository. Please report issues with the File editor app there.
+  - name: Report a bug with the Git pull app
+    url: https://github.com/home-assistant/app-git-pull/issues
+    about: Each app has its own repository. Please report issues with the Git pull app there.
+  - name: Report a bug with the Let's Encrypt app
+    url: https://github.com/home-assistant/app-letsencrypt/issues
+    about: Each app has its own repository. Please report issues with the Let's Encrypt app there.
+  - name: Report a bug with the MariaDB app
+    url: https://github.com/home-assistant/app-mariadb/issues
+    about: Each app has its own repository. Please report issues with the MariaDB app there.
+  - name: Report a bug with the Matter Server app
+    url: https://github.com/home-assistant/app-matter-server/issues
+    about: Each app has its own repository. Please report issues with the Matter Server app there.
+  - name: Report a bug with the Mosquitto broker app
+    url: https://github.com/home-assistant/app-mosquitto/issues
+    about: Each app has its own repository. Please report issues with the Mosquitto broker app there.
+  - name: Report a bug with the NGINX Home Assistant SSL proxy app
+    url: https://github.com/home-assistant/app-nginx-proxy/issues
+    about: Each app has its own repository. Please report issues with the NGINX Home Assistant SSL proxy app there.
+  - name: Report a bug with the OpenThread Border Router app
+    url: https://github.com/home-assistant/app-openthread-border-router/issues
+    about: Each app has its own repository. Please report issues with the OpenThread Border Router app there.
+  - name: Report a bug with the openWakeWord app
+    url: https://github.com/home-assistant/app-openwakeword/issues
+    about: Each app has its own repository. Please report issues with the openWakeWord app there.
+  - name: Report a bug with the Piper app
+    url: https://github.com/home-assistant/app-piper/issues
+    about: Each app has its own repository. Please report issues with the Piper app there.
+  - name: Report a bug with the RPC Shutdown app
+    url: https://github.com/home-assistant/app-rpc-shutdown/issues
+    about: Each app has its own repository. Please report issues with the RPC Shutdown app there.
+  - name: Report a bug with the Samba share app
+    url: https://github.com/home-assistant/app-samba/issues
+    about: Each app has its own repository. Please report issues with the Samba share app there.
+  - name: Report a bug with the Silicon Labs Flasher app
+    url: https://github.com/home-assistant/app-silabs-flasher/issues
+    about: Each app has its own repository. Please report issues with the Silicon Labs Flasher app there.
+  - name: Report a bug with the Speech-to-Phrase app
+    url: https://github.com/home-assistant/app-speech-to-phrase/issues
+    about: Each app has its own repository. Please report issues with the Speech-to-Phrase app there.
+  - name: Report a bug with the Terminal & SSH app
+    url: https://github.com/home-assistant/app-ssh/issues
+    about: Each app has its own repository. Please report issues with the Terminal & SSH app there.
+  - name: Report a bug with the VLC app
+    url: https://github.com/home-assistant/app-vlc/issues
+    about: Each app has its own repository. Please report issues with the VLC app there.
+  - name: Report a bug with the Whisper app
+    url: https://github.com/home-assistant/app-whisper/issues
+    about: Each app has its own repository. Please report issues with the Whisper app there.
+  - name: Report a bug with the Z-Wave JS app
+    url: https://github.com/home-assistant/app-zwave-js/issues
+    about: Each app has its own repository. Please report issues with the Z-Wave JS app there.
   - name: Report a bug with the UI, Frontend or Dashboards
     url: https://github.com/home-assistant/frontend/issues
     about: This is the issue tracker for our backend. Please report issues with the UI in the frontend repository.
   - name: Report a bug with Home Assistant
     url: https://github.com/home-assistant/core/issues
-    about: This is the issue tracker for our apps (formerly known as add-ons). Please report issues with the core software in the core repository.
+    about: This repository holds the official apps (formerly known as add-ons). Please report issues with the core software in the core repository.
   - name: Report incorrect or missing information on our website
     url: https://github.com/home-assistant/home-assistant.io/issues
     about: Our documentation has its own issue tracker. Please report issues with the website there.

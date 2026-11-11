@@ -1,4 +1,5 @@
 ---
+# yamllint disable rule:line-length
 name: Task
 description: For staff only - Create a task
 type: Task
@@ -8,22 +9,17 @@ body:
       value: |
         ## ⚠️ RESTRICTED ACCESS
 
-        **This form is restricted to Open Home Foundation staff and
-        authorized contributors only.**
+        **This form is restricted to Open Home Foundation staff and authorized contributors only.**
 
         If you are a community member wanting to contribute, please:
-        - For bug reports: Use the
-          [bug report form](https://github.com/home-assistant/addons/issues/new
-          ?template=bug_report.yml)
-        - For feature requests: Submit to
-          [Feature Requests](https://github.com/orgs/home-assistant/discussions)
+        - For bug reports: Use the issue tracker of the app's own repository, listed on the [new issue page](https://github.com/home-assistant/apps/issues/new/choose)
+        - For feature requests: Submit to [Feature Requests](https://github.com/orgs/home-assistant/discussions)
 
         ---
 
         ### For authorized contributors
 
-        Use this form to create tasks for development work, improvements,
-        or other actionable items that need to be tracked.
+        Use this form to create tasks for development work, improvements, or other actionable items that need to be tracked.
   - type: textarea
     id: description
     attributes:

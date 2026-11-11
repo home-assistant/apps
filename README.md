@@ -79,7 +79,8 @@ You have several options to get them answered:
 - The Home Assistant [Community Forum][forum].
 - Join the [Reddit subreddit][reddit] in [/r/homeassistant][reddit].
 
-In case you've found a bug, please [open an issue on our GitHub][issue].
+In case you've found a bug, please open an issue in the app's own repository.
+The [new issue page][issue] links to the repository of each app.
 
 ## Developing your own apps
 
@@ -90,6 +91,6 @@ about developing an app, please see our
 
 [discord]: https://www.home-assistant.io/join-chat
 [forum]: https://community.home-assistant.io
-[issue]: https://github.com/home-assistant/addons/issues
+[issue]: https://github.com/home-assistant/apps/issues/new/choose
 [reddit]: https://reddit.com/r/homeassistant
 [dev-docs]: https://contributors.home-assistant.io/apps/
