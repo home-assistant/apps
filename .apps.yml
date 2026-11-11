@@ -54,6 +54,10 @@ apps:
     repository: home-assistant/app-openwakeword
     target: openwakeword
     image: ghcr.io/home-assistant/app-openwakeword
+  piper:
+    repository: home-assistant/app-piper
+    target: piper
+    image: ghcr.io/home-assistant/app-piper
   rpc_shutdown:
     repository: home-assistant/app-rpc-shutdown
     target: rpc_shutdown

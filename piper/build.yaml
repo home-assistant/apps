@@ -1,7 +1,0 @@
----
-build_from:
-  amd64: ghcr.io/home-assistant/amd64-base-debian:trixie
-  aarch64: ghcr.io/home-assistant/aarch64-base-debian:trixie
-args:
-  WYOMING_PIPER_VERSION: 2.5.2
-  UV_VERSION: 0.12.12
