@@ -4,7 +4,7 @@ breaking_versions:
 slug: matter_server
 name: Matter Server
 description: Matter WebSocket Server for Home Assistant Matter support.
-url: https://github.com/home-assistant/app-matter-server https://github.com/home-assistant/addons/tree/master/matter_server
+url: https://github.com/home-assistant/app-matter-server
 arch:
 - aarch64
 - amd64
