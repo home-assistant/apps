@@ -14,7 +14,6 @@ Follow these steps to get the app (formerly known as add-on) installed on your s
 2. Add the VLC Telnet integration to Home Assistant, see documentation:
    <https://www.home-assistant.io/integrations/vlc_telnet>
 
-
 ## Configuration
 
 Note that automatic discovery is expected when the app is being installed. If no "VLC media player via Telnet" integration is being discovered, make sure to remove any stale "VLC media player via Telnet" integrations and reinstall the app to trigger discovery again.
@@ -33,5 +32,5 @@ In case you've found a bug, please [open an issue on our GitHub][issue].
 
 [discord]: https://www.home-assistant.io/join-chat
 [forum]: https://community.home-assistant.io
-[issue]: https://github.com/home-assistant/addons/issues
+[issue]: https://github.com/home-assistant/app-vlc/issues
 [reddit]: https://reddit.com/r/homeassistant

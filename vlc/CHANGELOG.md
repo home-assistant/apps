@@ -1,5 +1,12 @@
 # Changelog
 
+## 1.2.0
+
+- Convert startup scripts to s6-rc oneshots and modernize finish scripts
+- Move the s6 user bundle to user-bundles.d
+- Update base image to 3.24-2026.11.0
+- Publish app to GHCR
+
 ## 1.1.0
 
 - Run VLC with user privileges
