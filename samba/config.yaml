@@ -1,61 +1,61 @@
----
-version: 12.10.0
+version: 12.11.0
 slug: samba
 name: Samba share
 description: Expose Home Assistant folders with SMB/CIFS
-url: https://github.com/home-assistant/addons/tree/master/samba
+url: https://github.com/home-assistant/app-samba
 arch:
-  - aarch64
-  - amd64
+- aarch64
+- amd64
 hassio_api: true
 host_network: true
-image: homeassistant/{arch}-addon-samba
+image: ghcr.io/home-assistant/app-samba
 init: false
+log_format: timestamp
 map:
-  - local_apps:rw
-  - all_app_configs:rw
-  - backup:rw
-  - homeassistant_config:rw
-  - media:rw
-  - share:rw
-  - ssl:rw
+- local_apps:rw
+- all_app_configs:rw
+- backup:rw
+- homeassistant_config:rw
+- media:rw
+- share:rw
+- ssl:rw
 options:
   username: homeassistant
   password: null
   workgroup: WORKGROUP
   enabled_shares:
-    - local_apps
-    - app_configs
-    - backup
-    - config
-    - media
-    - share
-    - ssl
+  - local_apps
+  - app_configs
+  - backup
+  - config
+  - media
+  - share
+  - ssl
   compatibility_mode: false
   apple_compatibility_mode: true
   netbios: true
   local_master: true
   network_discovery: true
-  server_signing: "default"
+  server_signing: default
   veto_files:
-    - ._*
-    - .DS_Store
-    - Thumbs.db
-    - icon?
-    - .Trashes
+  - ._*
+  - .DS_Store
+  - Thumbs.db
+  - icon?
+  - .Trashes
   allow_hosts:
-    - 10.0.0.0/8
-    - 172.16.0.0/12
-    - 192.168.0.0/16
-    - 169.254.0.0/16
-    - fe80::/10
-    - fc00::/7
+  - 10.0.0.0/8
+  - 172.16.0.0/12
+  - 192.168.0.0/16
+  - 169.254.0.0/16
+  - fe80::/10
+  - fc00::/7
 schema:
   username: str
   password: password
   workgroup: str
   enabled_shares:
-    - "match(^(?i:(local_apps|app_configs|addons|addon_configs|backup|config|media|share|ssl))$)"
+  - match(^(?i:(local_apps|app_configs|addons|addon_configs|backup|config|media|share|ssl))$)
   compatibility_mode: bool
   apple_compatibility_mode: bool
   netbios: bool
@@ -63,7 +63,7 @@ schema:
   network_discovery: bool
   server_signing: list(default|auto|mandatory|disabled)
   veto_files:
-    - str
+  - str
   allow_hosts:
-    - str
+  - str
 startup: services

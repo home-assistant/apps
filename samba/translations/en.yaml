@@ -12,12 +12,12 @@ configuration:
     name: Workgroup
     description: Change WORKGROUP to reflect your network needs.
   enabled_shares:
-    name: >-
-      Enabled Shares - allowed values are:
-      local_apps, app_configs, backup, config, media, share, or ssl.
+    name: Enabled Shares
     description: >-
       List of file shares to make available.
       Adding a share requires typing its name to add it.
+      Allowed values are local_apps, app_configs, backup, config, media,
+      share, or ssl.
       The legacy names addons and addon_configs are still accepted and map to
       local_apps and app_configs for backward compatibility.
       Only these values are allowed;

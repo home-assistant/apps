@@ -1,5 +1,15 @@
 # Changelog
 
+## 12.11.0
+
+- Show timestamps in app logs by default
+- Shorten the enabled_shares label and tidy DOCS.md
+- Keep the container exit code at 0 when nmbd or wsdd get SIGTERM
+- Pass the password to smbpasswd with printf
+- Move the s6 user bundle to user-bundles.d
+- Update base image to 3.24-2026.11.0
+- Publish app to GHCR
+
 ## 12.10.0
 
 - Rename the `addons` and `addon_configs` shares to `local_apps` and `app_configs` to match Home Assistant's app terminology. Existing `enabled_shares` configurations are migrated automatically on start (extending the lower-case normalization added in 12.8.1).

@@ -16,19 +16,19 @@ Follow these steps to get the app (formerly known as add-on) installed on your s
 
 ## Connection
 
-If you are on Windows you use `\\<IP_ADDRESS>\`, if you are on MacOS you use `smb://<IP_ADDRESS>` to connect to the shares.
+If you are on Windows you use `\\<IP_ADDRESS>\`, if you are on macOS you use `smb://<IP_ADDRESS>` to connect to the shares.
 
 This app exposes the following directories over smb (samba):
 
-Directory | Description
--- | --
-`local_apps` | This is for your local apps.
-`app_configs` | This is for the configuration files of your apps.
-`backup` | This is for your backups.
-`config` | This is for your Home Assistant configuration.
-`media` | This is for local media files.
-`share` | This is for your data that is shared between apps and Home Assistant.
-`ssl` | This is for your SSL certificates.
+| Directory     | Description                                                           |
+| ------------- | --------------------------------------------------------------------- |
+| `local_apps`  | This is for your local apps.                                          |
+| `app_configs` | This is for the configuration files of your apps.                     |
+| `backup`      | This is for your backups.                                             |
+| `config`      | This is for your Home Assistant configuration.                        |
+| `media`       | This is for local media files.                                        |
+| `share`       | This is for your data that is shared between apps and Home Assistant. |
+| `ssl`         | This is for your SSL certificates.                                    |
 
 The `local_apps` and `app_configs` shares were previously named `addons` and
 `addon_configs`. Existing configurations are migrated to the new names
@@ -160,6 +160,5 @@ In case you've found a bug, please [open an issue on our GitHub][issue].
 
 [discord]: https://www.home-assistant.io/join-chat
 [forum]: https://community.home-assistant.io
-[issue]: https://github.com/home-assistant/addons/issues
+[issue]: https://github.com/home-assistant/app-samba/issues
 [reddit]: https://reddit.com/r/homeassistant
-[repository]: https://github.com/hassio-addons/repository
