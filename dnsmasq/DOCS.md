@@ -143,8 +143,7 @@ The IP address to resolve as reverse-mapping domain name. Use reversed IP addres
 
 The resulting name.
 
-
-### Option: `log_queries` (required) 
+### Option: `log_queries` (required)
 
 Log all DNS requests. Defaults to `false`.
 
@@ -166,6 +165,6 @@ In case you've found a bug, please [open an issue on our GitHub][issue].
 
 [discord]: https://www.home-assistant.io/join-chat
 [forum]: https://community.home-assistant.io
-[issue]: https://github.com/home-assistant/addons/issues
+[issue]: https://github.com/home-assistant/app-dnsmasq/issues
 [reddit]: https://reddit.com/r/homeassistant
 [repository]: https://github.com/hassio-addons/repository

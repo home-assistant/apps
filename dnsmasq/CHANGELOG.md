@@ -1,5 +1,10 @@
 # Changelog
 
+## 2.2.0
+
+- Update base image to Alpine 3.24 (with dnsmasq v2.92)
+- Publish app to GHCR
+
 ## 2.1.0
 
 - Added option for configuring TXT and PTR records

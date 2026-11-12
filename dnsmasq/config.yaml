@@ -1,18 +1,17 @@
----
-version: 2.1.0
+version: 2.2.0
 slug: dnsmasq
 name: Dnsmasq
 description: A simple DNS server
-url: https://github.com/home-assistant/addons/tree/master/dnsmasq
+url: https://github.com/home-assistant/app-dnsmasq
 arch:
-  - aarch64
-  - amd64
-image: homeassistant/{arch}-addon-dnsmasq
+- aarch64
+- amd64
+image: ghcr.io/home-assistant/app-dnsmasq
 init: false
 options:
   defaults:
-    - 8.8.8.8
-    - 8.8.4.4
+  - 8.8.8.8
+  - 8.8.4.4
   forwards: []
   hosts: []
   services: []
@@ -26,28 +25,28 @@ ports:
   53/udp: 53
 schema:
   defaults:
-    - str
+  - str
   forwards:
-    - domain: str
-      server: str
+  - domain: str
+    server: str
   hosts:
-    - host: str
-      ip: str
+  - host: str
+    ip: str
   services:
-    - host: str
-      port: str
-      priority: int
-      srv: str
-      weight: int
+  - host: str
+    port: str
+    priority: int
+    srv: str
+    weight: int
   cnames:
-    - name: str
-      target: str
+  - name: str
+    target: str
   txts:
-    - name: str
-      value: str
+  - name: str
+    value: str
   ptrs:
-    - ip: str
-      name: str
+  - ip: str
+    name: str
   log_queries: bool
   cache_size: int
 startup: system
