@@ -1,5 +1,10 @@
 # Changelog
 
+## 3.1.0
+
+- Update to Alpine 3.24 (updates samba to 4.23.8)
+- Publish app to GHCR
+
 ## 3.0
 
 - Remove unsupported architectures (armhf, armv7, i386)

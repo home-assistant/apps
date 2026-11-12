@@ -45,16 +45,16 @@ Set an alias for this record, which becomes the name for the input.
 
 IP address or NetBIOS name of the computer to be able to shutdown.
 
-### Option:  `computers.credentials` (required)
+### Option: `computers.credentials` (required)
 
 Credentials for logging into the computer.
 Use a `%` as the delimiter of username and password.
 
-### Option:  `computers.delay` (optional)
+### Option: `computers.delay` (optional)
 
 A delay (in seconds) before shutting down the computer. This gives a user that happens to be using that computer time to save their work.
 
-### Option:  `computers.message` (optional)
+### Option: `computers.message` (optional)
 
 Show a custom message on the screen of the computer that will be shutdown.
 
@@ -88,6 +88,6 @@ You have several options to get them answered:
 In case you've found a bug, please [open an issue on our GitHub][issue].
 
 [forum]: https://community.home-assistant.io
-[issue]: https://github.com/home-assistant/addons/issues
+[issue]: https://github.com/home-assistant/app-rpc-shutdown/issues
 [reddit]: https://reddit.com/r/homeassistant
 [discord]: https://www.home-assistant.io/join-chat
