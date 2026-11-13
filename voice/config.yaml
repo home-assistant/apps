@@ -1,0 +1,33 @@
+---
+version: 0.1.0
+slug: voice
+name: Voice
+description: >-
+  Extra voice support for the next generation voice stack in Home Assistant
+url: https://github.com/OHF-Voice/app-voice
+# Where the shared app workflow publishes the built image. The
+# standalone image is published beside it as app-voice-standalone,
+# so the two never share a tag.
+image: ghcr.io/ohf-voice/app-voice
+arch:
+  - amd64
+  - aarch64
+init: false
+# Announced to Home Assistant over the Supervisor's discovery API, which
+# starts a config flow in the integration of the same name. There is nothing
+# for anyone to fill in: installing the app is the whole setup.
+discovery:
+  - voice_support
+# Home Assistant reaches the app by its container hostname on the Supervisor
+# network, so the port is here only to be reachable for debugging, and is not
+# published on the host.
+ports:
+  "10900/tcp": null
+ports_description:
+  "10900/tcp": Wake word verification (HTTP and websocket)
+# Each decode hands the decoder a window of audio as a file, because that is
+# what Kaldi reads. Without this it would be a write to the container's
+# overlay on every wake word a satellite hears; with it the file never
+# leaves memory. It is 45 kB at a time.
+tmpfs: true
+homeassistant: 2026.12.0
