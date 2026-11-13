@@ -2,7 +2,8 @@
 version: 0.1.0
 slug: voice
 name: Voice
-description: A second opinion on what your voice satellites hear
+description: >-
+  Extra voice support for the next generation voice stack in Home Assistant
 url: https://github.com/OHF-Voice/app-voice
 # Where the shared app workflow publishes the built image. The
 # standalone image is published beside it as app-voice-standalone,
