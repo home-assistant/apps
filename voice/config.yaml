@@ -1,5 +1,5 @@
 ---
-version: 0.1.0
+version: 0.1.1
 slug: voice
 name: Voice
 description: >-
@@ -30,4 +30,4 @@ ports_description:
 # overlay on every wake word a satellite hears; with it the file never
 # leaves memory. It is 45 kB at a time.
 tmpfs: true
-homeassistant: 2026.12.0
+homeassistant: 2026.12.0.dev0
