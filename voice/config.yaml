@@ -1,7 +1,7 @@
 ---
 version: 0.1.1
 slug: voice
-name: Voice
+name: Voice Support
 description: >-
   Extra voice support for the next generation voice stack in Home Assistant
 url: https://github.com/OHF-Voice/app-voice
