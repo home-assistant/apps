@@ -1,14 +1,14 @@
 ---
 version: 0.1.1
-slug: voice
+slug: voice_support
 name: Voice Support
 description: >-
   Extra voice support for the next generation voice stack in Home Assistant
-url: https://github.com/OHF-Voice/app-voice
+url: https://github.com/OHF-Voice/app-voice-support
 # Where the shared app workflow publishes the built image. The
-# standalone image is published beside it as app-voice-standalone,
+# standalone image is published beside it as app-voice-support-standalone,
 # so the two never share a tag.
-image: ghcr.io/ohf-voice/app-voice
+image: ghcr.io/ohf-voice/app-voice-support
 arch:
   - amd64
   - aarch64

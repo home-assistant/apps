@@ -82,10 +82,10 @@ apps:
     repository: home-assistant/app-vlc
     target: vlc
     image: ghcr.io/home-assistant/app-vlc
-  voice:
-    repository: OHF-Voice/app-voice
-    target: voice
-    image: ghcr.io/ohf-voice/app-voice
+  voice_support:
+    repository: OHF-Voice/app-voice-support
+    target: voice_support
+    image: ghcr.io/ohf-voice/app-voice-support
   whisper:
     repository: home-assistant/app-whisper
     target: whisper
