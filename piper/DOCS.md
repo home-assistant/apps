@@ -134,10 +134,18 @@ Voices in `/share/piper` are listed but cannot be deleted from the web
 interface, because that directory is mounted read-only. Delete those files
 directly instead.
 
-Because voices can be added and removed here, the set you end up with is your
-own and is included in the app's backups — including uploads, which exist
-nowhere else. Only the large re-downloadable caches are left out: the OmniVoice
-model weights and the downloads for the Japanese and Thai options.
+Uploaded voices are saved in `/data/uploaded_voices` and included in the app's
+backups, since they exist nowhere else. Everything that can be downloaded again
+is left out: voices from Piper's catalog (kept in `/data/downloads`), the
+OmniVoice model weights and the downloads for the Japanese and Thai options.
+After a restore, catalog voices are downloaded again when they are first used.
+
+Earlier versions of the app kept both kinds of voice directly in `/data`. The
+first time this version starts, it sorts them: a voice whose files are byte for
+byte the catalog's moves to `/data/downloads`, and every other voice moves to
+`/data/uploaded_voices`. So a voice of your own that reuses a catalog name — a
+fine-tune exported as `en_US-lessac-medium.onnx`, say — stays in backups and is
+used instead of the catalog voice.
 
 ## Custom Voices
 
@@ -174,6 +182,6 @@ In case you've found an bug, please [open an issue on our GitHub][issue].
 
 [discord]: https://www.home-assistant.io/join-chat
 [forum]: https://community.home-assistant.io
-[issue]: https://github.com/home-assistant/addons/issues
+[issue]: https://github.com/home-assistant/app-piper/issues
 [reddit]: https://reddit.com/r/homeassistant
 [repository]: https://github.com/hassio-addons/repository

@@ -1,33 +1,21 @@
----
-version: 2.5.2
+version: 2.5.4
 slug: piper
 name: Piper
 description: Text-to-speech with Piper
-url: https://github.com/home-assistant/addons/blob/master/piper
+url: https://github.com/home-assistant/app-piper
 arch:
-  - amd64
-  - aarch64
+- amd64
+- aarch64
 init: false
 discovery:
-  - wyoming
-# Voice models ("*.onnx") used to be excluded, back when /data held nothing but
-# re-downloadable copies of catalog voices. The web interface now uploads and
-# deletes voices there, so which models are present is the user's own choice and
-# has to survive a backup -- an uploaded voice exists nowhere else. Only the
-# genuinely disposable caches below are skipped.
+- wyoming
 backup_exclude:
-  # OmniVoice weights, 632 MB. The 1.5 MB graph beside them is kept, but the
-  # backend needs both files, so a restore without the weights just downloads
-  # them again.
-  - "*.onnx.data"
-  # HuggingFace cache (HF_HOME is /data, so models land in /data/hub).
-  - "*/hub"
-  # Wheel cache for the optional packs, rebuilt on demand.
-  - "*/uv-cache"
+- '*/downloads'
+- '*/uv-cache'
 map:
-  - share
+- share
 ingress: true
-ingress_port: 8099
+ingress_stream: true
 panel_icon: mdi:account-voice
 panel_title: Piper voices
 options:
@@ -45,8 +33,8 @@ options:
   update_voices: true
 schema:
   backend: list(piper|omnivoice)
-  voice: |
-    list(ar_JO-kareem-low|ar_JO-kareem-medium|bg_BG-dimitar-medium|bn_BD-google-medium|ca_ES-upc_ona-medium|ca_ES-upc_ona-x_low|ca_ES-upc_pau-x_low|ca-upc_ona-x-low|ca-upc_pau-x-low|cs_CZ-jirka-low|cs_CZ-jirka-medium|cs_CZ-kasandra-medium|cy_GB-bu_tts-medium|cy_GB-gwryw_gogleddol-medium|da_DK-talesyntese-medium|da-nst_talesyntese-medium|de_DE-eva_k-x_low|de_DE-karlsson-low|de_DE-kerstin-low|de_DE-mls-medium|de_DE-pavoque-low|de_DE-ramona-low|de_DE-thorsten_emotional-medium|de_DE-thorsten-high|de_DE-thorsten-low|de_DE-thorsten-medium|de-eva_k-x-low|de-karlsson-low|de-kerstin-low|de-pavoque-low|de-ramona-low|de-thorsten-low|el_GR-joy-medium|el-gr-rapunzelina-low|el_GR-rapunzelina-low|el_GR-rapunzelina-medium|en-gb-alan-low|en_GB-alan-low|en_GB-alan-medium|en_GB-alba-medium|en_GB-aru-medium|en_GB-cori-high|en_GB-cori-medium|en_GB-jenny_dioco-medium|en_GB-northern_english_male-medium|en_GB-semaine-medium|en-gb-southern_english_female-low|en_GB-southern_english_female-low|en_GB-vctk-medium|en-us-amy-low|en_US-amy-low|en_US-amy-medium|en_US-arctic-medium|en_US-bryce-medium|en-us-danny-low|en_US-danny-low|en_US-hfc_female-medium|en_US-hfc_male-medium|en_US-joe-medium|en_US-john-medium|en-us-kathleen-low|en_US-kathleen-low|en_US-kristin-medium|en_US-kusal-medium|en_US-l2arctic-medium|en_US-lessac-high|en-us-lessac-low|en_US-lessac-low|en-us-lessac-medium|en_US-lessac-medium|en-us-libritts-high|en_US-libritts-high|en_US-libritts_r-medium|en_US-ljspeech-high|en_US-ljspeech-medium|en_US-mike-medium|en_US-norman-medium|en_US-reza_ibrahim-medium|en-us-ryan-high|en_US-ryan-high|en-us-ryan-low|en_US-ryan-low|en-us-ryan-medium|en_US-ryan-medium|en_US-sam-medium|es_AR-daniela-high|es-carlfm-x-low|es_ES-carlfm-x_low|es_ES-davefx-medium|es_ES-mls_10246-low|es_ES-mls_9972-low|es_ES-sharvard-medium|es-mls_10246-low|es-mls_9972-low|es_MX-ald-medium|es_MX-ald-x_low|es_MX-claude-high|et_EE-news-medium|eu_ES-antton-medium|eu_ES-maider-medium|fa_IR-amir-medium|fa_IR-ganji_adabi-medium|fa_IR-ganji-medium|fa_IR-gyro-medium|fa_IR-reza_ibrahim-medium|fi_FI-harri-low|fi_FI-harri-medium|fi-harri-low|fr_FR-gilles-low|fr_FR-mls_1840-low|fr_FR-mls-medium|fr_FR-siwis-low|fr_FR-siwis-medium|fr_FR-tom-medium|fr_FR-upmc-medium|fr-gilles-low|fr-mls_1840-low|fr-siwis-low|fr-siwis-medium|he_IL-saspeech-medium|hi_IN-pratham-medium|hi_IN-priyamvada-medium|hi_IN-rohan-medium|hu_HU-anna-medium|hu_HU-berta-medium|hu_HU-imre-medium|hy_AM-gor-medium|id_ID-news_tts-medium|is-bui-medium|is_IS-bui-medium|is_IS-salka-medium|is_IS-steinn-medium|is_IS-ugla-medium|is-salka-medium|is-steinn-medium|is-ugla-medium|it_IT-paola-medium|it_IT-riccardo-x_low|it-riccardo_fasol-x-low|it_IT-serena-high|it_IT-serena-medium|ja_JA-hi_fi_captain-medium|ka_GE-natia-medium|kk-iseke-x-low|kk-issai-high|kk_KZ-iseke-x_low|kk_KZ-issai-high|kk_KZ-raya-x_low|kk-raya-x-low|ko_KR-kss-medium|ku_TR-berfin_renas-medium|lb_LU-marylux-medium|lv_LV-aivars-medium|ml_IN-arjun-medium|ml_IN-meera-medium|mr_IN-google-medium|ne-google-medium|ne-google-x-low|ne_NP-chitwan-medium|ne_NP-google-medium|ne_NP-google-x_low|nl_BE-nathalie-medium|nl_BE-nathalie-x_low|nl_BE-rdh-medium|nl_BE-rdh-x_low|nl-mls_5809-low|nl-mls_7432-low|nl-nathalie-x-low|nl_NL-alex-medium|nl_NL-mls_5809-low|nl_NL-mls_7432-low|nl_NL-mls-medium|nl_NL-pim-medium|nl_NL-ronnie-medium|nl-rdh-medium|nl-rdh-x-low|no_NO-nvcc-medium|no_NO-talesyntese-medium|no-talesyntese-medium|pl-mls_6892-low|pl_PL-bass-high|pl_PL-darkman-medium|pl_PL-gosia-medium|pl_PL-mc_speech-medium|pl_PL-mls_6892-low|pt_BR-cadu-medium|pt-br-edresson-low|pt_BR-edresson-low|pt_BR-faber-medium|pt_BR-jeff-medium|pt_PT-tugão-medium|ro_RO-mihai-medium|ru-irinia-medium|ru_RU-denis-medium|ru_RU-dmitri-medium|ru_RU-irina-medium|ru_RU-ruslan-medium|sk_SK-lili-medium|sl_SI-artur-medium|sq_AL-edon-medium|sr_RS-serbski_institut-medium|sv_SE-alma-medium|sv_SE-lisa-medium|sv_SE-nst-medium|sw_CD-lanfrica-medium|te_IN-maya-medium|te_IN-padmavathi-medium|te_IN-venkatesh-medium|th_TH-tsync2-medium|tr_TR-dfki-medium|uk-lada-x-low|uk_UA-lada-x_low|uk_UA-mykyta-high|uk_UA-oleksa-high|uk_UA-tetiana-high|uk_UA-ukrainian_tts-medium|ur_PK-aegis_female-medium|ur_PK-fasih-medium|vi-25hours-single-low|vi-vivos-x-low|vi_VN-25hours_single-low|vi_VN-vais1000-medium|vi_VN-vivos-x_low|zh_CN-chaowen-medium|zh_CN-huayan-medium|zh-cn-huayan-x-low|zh_CN-huayan-x_low|zh_CN-xiao_ya-medium)
+  voice: "list(ar_JO-kareem-low|ar_JO-kareem-medium|bg_BG-dimitar-medium|bn_BD-google-medium|ca_ES-upc_ona-medium|ca_ES-upc_ona-x_low|ca_ES-upc_pau-x_low|ca-upc_ona-x-low|ca-upc_pau-x-low|cs_CZ-jirka-low|cs_CZ-jirka-medium|cs_CZ-kasandra-medium|cy_GB-bu_tts-medium|cy_GB-gwryw_gogleddol-medium|da_DK-talesyntese-medium|da-nst_talesyntese-medium|de_DE-eva_k-x_low|de_DE-karlsson-low|de_DE-kerstin-low|de_DE-kerstin-medium|de_DE-mls-medium|de_DE-pavoque-low|de_DE-ramona-low|de_DE-thorsten_emotional-medium|de_DE-thorsten-high|de_DE-thorsten-low|de_DE-thorsten-medium|de-eva_k-x-low|de-karlsson-low|de-kerstin-low|de-pavoque-low|de-ramona-low|de-thorsten-low|el_GR-joy-medium|el-gr-rapunzelina-low|el_GR-rapunzelina-low|el_GR-rapunzelina-medium|en-gb-alan-low|en_GB-alan-low|en_GB-alan-medium|en_GB-alba-medium|en_GB-aru-medium|en_GB-cori-high|en_GB-cori-medium|en_GB-jenny_dioco-medium|en_GB-northern_english_male-medium|en_GB-semaine-medium|en-gb-southern_english_female-low|en_GB-southern_english_female-low|en_GB-vctk-medium|en-us-amy-low|en_US-amy-low|en_US-amy-medium|en_US-arctic-medium|en_US-bryce-medium|en-us-danny-low|en_US-danny-low|en_US-hfc_female-medium|en_US-hfc_male-medium|en_US-hifi_tts_92-medium|en_US-joe-medium|en_US-john-medium|en-us-kathleen-low|en_US-kathleen-low|en_US-kathleen-medium|en_US-kristin-medium|en_US-kusal-medium|en_US-l2arctic-medium|en_US-lessac-high|en-us-lessac-low|en_US-lessac-low|en-us-lessac-medium|en_US-lessac-medium|en-us-libritts-high|en_US-libritts-high|en_US-libritts_r-medium|en_US-ljspeech-high|en_US-ljspeech-medium|en_US-mike-medium|en_US-norman-medium|en_US-reza_ibrahim-medium|en-us-ryan-high|en_US-ryan-high|en-us-ryan-low|en_US-ryan-low|en-us-ryan-medium|en_US-ryan-medium|en_US-sam-medium|es_AR-daniela-high|es-carlfm-x-low|es_ES-carlfm-x_low|es_ES-davefx-medium|es_ES-mls_10246-low|es_ES-mls_9972-low|es_ES-sharvard-medium|es-mls_10246-low|es-mls_9972-low|es_MX-ald-medium|es_MX-ald-x_low|es_MX-claude-high|et_EE-news-medium|eu_ES-antton-medium|eu_ES-maider-medium|fa_IR-amir-medium|fa_IR-ganji_adabi-medium|fa_IR-ganji-medium|fa_IR-gyro-medium|fa_IR-magnoliasis-medium|fa_IR-reza_ibrahim-medium|fi_FI-harri-low|fi_FI-harri-medium|fi-harri-low|fr_FR-gilles-low|fr_FR-mls_1840-low|fr_FR-mls-medium|fr_FR-siwis-low|fr_FR-siwis-medium|fr_FR-tom-medium|fr_FR-upmc-medium|fr-gilles-low|fr-mls_1840-low|fr-siwis-low|fr-siwis-medium|he_IL-saspeech-medium|hi_IN-pratham-medium|hi_IN-priyamvada-medium|hi_IN-rohan-medium|hu_HU-anna-medium|hu_HU-berta-medium|hu_HU-imre-medium|hy_AM-gor-medium|id_ID-news_tts-medium|is-bui-medium|is_IS-bui-medium|is_IS-salka-medium|is_IS-steinn-medium|is_IS-ugla-medium|is-salka-medium|is-steinn-medium|is-ugla-medium|it_IT-paola-medium|it_IT-riccardo-x_low|it-riccardo_fasol-x-low|it_IT-serena-high|it_IT-serena-medium|ja_JA-hi_fi_captain-medium|ja_JP-hi_fi_captain-medium|ka_GE-natia-medium|kk-iseke-x-low|kk-issai-high|kk_KZ-iseke-x_low|kk_KZ-issai-high|kk_KZ-raya-x_low|kk-raya-x-low|ko_KR-kss-medium|ku_TR-berfin_renas-medium|lb_LU-marylux-medium|lt_LT-ingute-medium|lt_LT-reginute1-medium|lv_LV-aivars-medium|ml_IN-arjun-medium|ml_IN-meera-medium|mr_IN-google-medium|ne-google-medium|ne-google-x-low|ne_NP-chitwan-medium|ne_NP-google-medium|ne_NP-google-x_low|nl_BE-nathalie-medium|nl_BE-nathalie-x_low|nl_BE-rdh-medium|nl_BE-rdh-x_low|nl-mls_5809-low|nl-mls_7432-low|nl-nathalie-x-low|nl_BE-flemishguy-medium|nl_NL-alex-medium|nl_NL-mls_5809-low|nl_NL-mls_7432-low|nl_NL-mls-medium|nl_NL-pim-medium|nl_NL-ronnie-medium|nl-rdh-medium|nl-rdh-x-low|no_NO-nvcc-medium|no_NO-talesyntese-medium|no-talesyntese-medium|pl-mls_6892-low|pl_PL-bass-high|pl_PL-darkman-medium|pl_PL-gosia-medium|pl_PL-mc_speech-medium|pl_PL-mls_6892-low|pt_BR-cadu-medium|pt-br-edresson-low|pt_BR-edresson-low|pt_BR-faber-medium|pt_BR-jeff-medium|pt_PT-tug\xE3\
+    o-medium|ro_RO-mihai-medium|ru-irinia-medium|ru_RU-denis-medium|ru_RU-dmitri-medium|ru_RU-irina-medium|ru_RU-ruslan-medium|sk_SK-lili-medium|sl_SI-artur-medium|sq_AL-edon-medium|sr_RS-serbski_institut-medium|sv_SE-alma-medium|sv_SE-lisa-medium|sv_SE-nst-medium|sw_CD-lanfrica-medium|te_IN-maya-medium|te_IN-padmavathi-medium|te_IN-venkatesh-medium|th_TH-tsync2-medium|tr_TR-dfki-medium|uk-lada-x-low|uk_UA-lada-x_low|uk_UA-mykyta-high|uk_UA-oleksa-high|uk_UA-tetiana-high|uk_UA-ukrainian_tts-medium|ur_PK-aegis_female-medium|ur_PK-fasih-medium|vi-25hours-single-low|vi-vivos-x-low|vi_VN-25hours_single-low|vi_VN-vais1000-medium|vi_VN-vivos-x_low|zh_CN-chaowen-medium|zh_CN-huayan-medium|zh-cn-huayan-x-low|zh_CN-huayan-x_low|zh_CN-xiao_ya-medium)\n"
   speaker: int
   length_scale: float
   noise_scale: float
@@ -58,6 +46,6 @@ schema:
   debug_logging: bool
   update_voices: bool
 ports:
-  "10200/tcp": null
+  10200/tcp: null
 homeassistant: 2023.8.0.dev20230718
-image: homeassistant/{arch}-addon-piper
+image: ghcr.io/home-assistant/app-piper

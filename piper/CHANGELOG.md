@@ -1,5 +1,34 @@
 # Changelog
 
+## 2.5.4
+
+First release from the standalone app repository. Includes wyoming-piper 2.5.3 and 2.5.4.
+
+## Backups
+
+- Downloaded voices are no longer included in backups. Catalog voices, `voices.json` and the OmniVoice model weights now live in `/data/downloads`, which is excluded and re-downloaded when needed. Voices uploaded through the web interface are kept in `/data/uploaded_voices` and are still backed up. Existing voices are sorted into the new directories once, on first start (#10)
+
+## Web interface
+
+- Voices larger than 16 MiB can be uploaded (#3)
+- Uploading a voice again under the same name takes effect right away, and a deleted voice stops being used, without restarting the app (wyoming-piper 2.5.4)
+- Uploads are atomic: a voice can no longer be loaded while it is still being uploaded, and an interrupted upload no longer leaves a broken voice behind (wyoming-piper 2.5.4)
+
+## Voices
+
+- New voices, including `fa_IR-magnoliasis-medium`, and updated files for re-released voices (#14)
+- The Japanese voice is now `ja_JP-hi_fi_captain-medium`; the old `ja_JA-hi_fi_captain-medium` name still works
+
+## Fixes
+
+- A plain synthesize request sent after a streamed one on the same connection is answered instead of hanging (wyoming-piper 2.5.3)
+
+## Maintenance
+
+- Move the s6 user bundle to `user-bundles.d` (#9)
+- Update the base image to `trixie-2026.11.0` and uv to 0.13.9 (#5, #6, #12, #13)
+- Move dependency updates from Dependabot to Renovate (#1)
+
 ## 2.5.2
 
 - Upgrade to `wyoming-piper` 2.5.2
