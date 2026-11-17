@@ -162,43 +162,43 @@ Two tips for non-English use:
   This applies to the Whisper backends (not parakeet/sherpa, SenseVoice, or GigaAM).
 
 - English
-    - Balanced
-        - `language` = "en"
-        - `model` = "auto"
-        - `stt_library` = "auto"
-        - `sherpa_streaming` = false
-    - Fast
-        - `language` = "en"
-        - `model` = "auto"
-        - `stt_library` = "auto"
-        - `sherpa_streaming` = true
-    - Accurate
-        - `language` = "en"
-        - `model` = "custom"
-        - `stt_library` = "onnx-asr"
-        - `custom_model` = "istupakov/canary-1b-v2-onnx"
+  - Balanced
+    - `language` = "en"
+    - `model` = "auto"
+    - `stt_library` = "auto"
+    - `sherpa_streaming` = false
+  - Fast
+    - `language` = "en"
+    - `model` = "auto"
+    - `stt_library` = "auto"
+    - `sherpa_streaming` = true
+  - Accurate
+    - `language` = "en"
+    - `model` = "custom"
+    - `stt_library` = "onnx-asr"
+    - `custom_model` = "istupakov/canary-1b-v2-onnx"
 - Chinese / Cantonese / Japanese / Korean
-    - Balanced (recommended)
-        - `language` = "zh", "yue", "ja", or "ko"
-        - `model` = "auto"
-        - `stt_library` = "auto"
-          (selects the SenseVoice model via funasr — fast and accurate for
-          these languages)
+  - Balanced (recommended)
+    - `language` = "zh", "yue", "ja", or "ko"
+    - `model` = "auto"
+    - `stt_library` = "auto"
+      (selects the SenseVoice model via funasr — fast and accurate for
+      these languages)
 - Non-English (other languages)
-    - Balanced
-        - `language` = your language code (e.g. "de", "fr")
-        - `model` = "auto"
-        - `stt_library` = "auto"
-    - Fast
-        - `language` = your language code
-        - `model` = "base-int8" (or "small-int8" if your CPU allows)
-        - `stt_library` = "faster-whisper"
-    - Accurate
-        - `language` = your language code
-        - `model` = "custom"
-        - `stt_library` = "onnx-asr"
-        - `custom_model` = "istupakov/canary-1b-v2-onnx"
-          (~25 European languages; needs a capable CPU, not a Raspberry Pi)
+  - Balanced
+    - `language` = your language code (e.g. "de", "fr")
+    - `model` = "auto"
+    - `stt_library` = "auto"
+  - Fast
+    - `language` = your language code
+    - `model` = "base-int8" (or "small-int8" if your CPU allows)
+    - `stt_library` = "faster-whisper"
+  - Accurate
+    - `language` = your language code
+    - `model` = "custom"
+    - `stt_library` = "onnx-asr"
+    - `custom_model` = "istupakov/canary-1b-v2-onnx"
+      (~25 European languages; needs a capable CPU, not a Raspberry Pi)
 
 ## Support
 
@@ -214,7 +214,7 @@ In case you've found an bug, please [open an issue on our GitHub][issue].
 
 [discord]: https://www.home-assistant.io/join-chat
 [forum]: https://community.home-assistant.io
-[issue]: https://github.com/home-assistant/addons/issues
+[issue]: https://github.com/home-assistant/app-whisper/issues
 [reddit]: https://reddit.com/r/homeassistant
 [repository]: https://github.com/hassio-addons/repository
 [transformers]: https://huggingface.co/docs/transformers

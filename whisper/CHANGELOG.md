@@ -1,5 +1,19 @@
 # Changelog
 
+## 3.6.0
+
+- Update wyoming-faster-whisper from 3.5.0 to 3.9.0
+- Only advertise the languages the selected speech-to-text library can transcribe. With the library set to `auto` (the default), every Whisper language is still available
+- Make Cantonese reachable from Home Assistant pipelines (advertised as `zh-HK`)
+- Warn at startup when the configured language is not supported by the selected library, and fall back to auto-detection instead of failing when a language code is unusable
+- Streaming sherpa models no longer cut off the last word or two of a command
+- Start without internet access when the model is already downloaded
+- Stopping the app during a first model download no longer leaves a broken model behind that fails to load on every later start
+- Warn at startup when an initial prompt is used with a Distil-Whisper model, which these models do not support
+- Update speech recognition components: wyoming 1.11.0, onnxruntime 1.32.0, sherpa-onnx 1.13.8, CTranslate2 4.9.0, FunASR 1.4.27
+- Update the Debian trixie base image
+- The app is now built from [home-assistant/app-whisper](https://github.com/home-assistant/app-whisper) and its signed image is published to GitHub Container Registry
+
 ## 3.5.3
 
 - Shut down cleanly when the app is stopped

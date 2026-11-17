@@ -1,49 +1,53 @@
----
-version: 3.5.3
+version: 3.6.0
 slug: whisper
 name: Whisper
 description: Speech-to-text with Whisper
-url: https://github.com/home-assistant/addons/blob/master/whisper
+url: https://github.com/home-assistant/app-whisper
 arch:
-  - amd64
-  - aarch64
+- amd64
+- aarch64
 init: false
 discovery:
-  - wyoming
+- wyoming
 backup_exclude:
-  - "models*"
+- models*
 map:
-  - app_config:rw
+- app_config:rw
 options:
   model: auto
   language: en
   beam_size: 0
-  custom_model_type: "faster-whisper"
-  stt_library: "auto"
-  whisper_task: "transcribe"
+  custom_model_type: faster-whisper
+  stt_library: auto
+  whisper_task: transcribe
   sherpa_streaming: false
   vad_clip: false
   local_files_only: false
   debug_logging: false
 schema:
-  model: |
-    list(auto|tiny-int8|tiny|tiny.en|base-int8|base|base.en|small-int8|distil-small.en|small|small.en|distil-medium.en|medium-int8|medium|medium.en|large|large-v1|distil-large-v2|large-v2|distil-large-v3|large-v3|turbo|custom)
-  stt_library: |
-    list(auto|faster-whisper|sherpa|transformers|onnx-asr|funasr)
+  model: 'list(auto|tiny-int8|tiny|tiny.en|base-int8|base|base.en|small-int8|distil-small.en|small|small.en|distil-medium.en|medium-int8|medium|medium.en|large|large-v1|distil-large-v2|large-v2|distil-large-v3|large-v3|turbo|custom)
+
+    '
+  stt_library: 'list(auto|faster-whisper|sherpa|transformers|onnx-asr|funasr)
+
+    '
   custom_model: str?
-  custom_model_type: |
-    list(faster-whisper|sherpa|transformers|onnx-asr|funasr)
-  language: |
-    list(auto|af|am|ar|as|az|ba|be|bg|bn|bo|br|bs|ca|cs|cy|da|de|el|en|es|et|eu|fa|fi|fo|fr|gl|gu|ha|haw|he|hi|hr|ht|hu|hy|id|is|it|ja|jw|ka|kk|km|kn|ko|la|lb|ln|lo|lt|lv|mg|mi|mk|ml|mn|mr|ms|mt|my|ne|nl|nn|no|oc|pa|pl|ps|pt|ro|ru|sa|sd|si|sk|sl|sn|so|sq|sr|su|sv|sw|ta|te|tg|th|tk|tl|tr|tt|uk|ur|uz|vi|yi|yo|zh|yue)
+  custom_model_type: 'list(faster-whisper|sherpa|transformers|onnx-asr|funasr)
+
+    '
+  language: 'list(auto|af|am|ar|as|az|ba|be|bg|bn|bo|br|bs|ca|cs|cy|da|de|el|en|es|et|eu|fa|fi|fo|fr|gl|gu|ha|haw|he|hi|hr|ht|hu|hy|id|is|it|ja|jw|ka|kk|km|kn|ko|la|lb|ln|lo|lt|lv|mg|mi|mk|ml|mn|mr|ms|mt|my|ne|nl|nn|no|oc|pa|pl|ps|pt|ro|ru|sa|sd|si|sk|sl|sn|so|sq|sr|su|sv|sw|ta|te|tg|th|tk|tl|tr|tt|uk|ur|uz|vi|yi|yo|zh|yue)
+
+    '
   beam_size: int
   initial_prompt: str?
-  whisper_task: |
-    list(transcribe|translate)
+  whisper_task: 'list(transcribe|translate)
+
+    '
   sherpa_streaming: bool
   vad_clip: bool
   local_files_only: bool
   debug_logging: bool
 ports:
-  "10300/tcp": null
+  10300/tcp: null
 homeassistant: 2023.8.0.dev20230728
-image: homeassistant/{arch}-addon-whisper
+image: ghcr.io/home-assistant/app-whisper
