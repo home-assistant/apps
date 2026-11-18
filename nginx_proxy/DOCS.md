@@ -21,13 +21,13 @@ The NGINX Proxy app is commonly used in conjunction with the [Duck DNS](https://
      trusted_proxies:
        - 172.30.33.0/24
    ```
+
 3. In the nginx app configuration, change the `domain` option to the domain name you registered (from DuckDNS or any other domain you control).
 4. Leave all other options as-is.
 5. Save configuration.
 6. Start the app.
 7. Have some patience and wait a couple of minutes.
 8. Check the app log output to see the result.
-
 
 ## Configuration
 
@@ -116,6 +116,6 @@ In case you've found a bug, please [open an issue on our GitHub][issue].
 [discord]: https://www.home-assistant.io/join-chat
 [forum]: https://community.home-assistant.io
 [hsts]: https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Strict-Transport-Security
-[issue]: https://github.com/home-assistant/addons/issues
+[issue]: https://github.com/home-assistant/app-nginx-proxy/issues
 [reddit]: https://reddit.com/r/homeassistant
 [repository]: https://github.com/hassio-addons/repository

@@ -1,18 +1,17 @@
----
-version: 4.5.1
+version: 4.5.2
 hassio_api: true
 slug: nginx_proxy
 name: NGINX Home Assistant SSL proxy
 description: An SSL/TLS proxy
-url: https://github.com/home-assistant/addons/tree/master/nginx_proxy
+url: https://github.com/home-assistant/app-nginx-proxy
 arch:
-  - aarch64
-  - amd64
-image: homeassistant/{arch}-addon-nginx_proxy
+- aarch64
+- amd64
+image: ghcr.io/home-assistant/app-nginx-proxy
 init: false
 map:
-  - ssl
-  - share
+- ssl
+- share
 options:
   domain: null
   hsts: max-age=31536000; includeSubDomains
@@ -43,4 +42,4 @@ schema:
     default: str
     servers: str
   real_ip_from:
-    - str
+  - str
