@@ -62,6 +62,9 @@ contact_links:
   - name: Report a bug with the VLC app
     url: https://github.com/home-assistant/app-vlc/issues
     about: Each app has its own repository. Please report issues with the VLC app there.
+  - name: Report a bug with the Voice Support app
+    url: https://github.com/OHF-Voice/app-voice-support/issues
+    about: Each app has its own repository. Please report issues with the Voice Support app there.
   - name: Report a bug with the Whisper app
     url: https://github.com/home-assistant/app-whisper/issues
     about: Each app has its own repository. Please report issues with the Whisper app there.

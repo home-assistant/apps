@@ -65,6 +65,10 @@ systems that have installed Home Assistant.
 
     Allow logging in remotely to Home Assistant using SSH or just the web terminal with Ingress.
 
+- **[Voice Support](/voice_support/README.md)**
+
+    Extra voice support for the next generation voice stack in Home Assistant.
+
 - **[Z-Wave JS](/zwave_js/README.md)**
 
     Allow Home Assistant to talk to a Z-Wave Network via a USB Controller.
