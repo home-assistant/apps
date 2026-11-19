@@ -1,5 +1,12 @@
 # Changelog
 
+## 3.6.1
+
+- Update wyoming-faster-whisper from 3.9.0 to 3.9.1
+- Custom models are offered for all of Whisper's languages again. Since 3.6.0, a custom `onnx-asr`, `sherpa` or `funasr` model was only offered for its library's default languages (for example Russian only for `onnx-asr`), so a pipeline in another language could not select it
+- The `onnx-asr` library no longer keeps CPU cores busy after a transcript, which slowed down other work on the same machine, such as a local LLM answering the command
+- On x86-64 CPUs without x86-64-v2 support (often a virtual machine with CPU type `kvm64`), the app now stops at startup with a message explaining how to fix it, instead of crashing with a NumPy error
+
 ## 3.6.0
 
 - Update wyoming-faster-whisper from 3.5.0 to 3.9.0

@@ -8,6 +8,12 @@ Follow these steps to get the app installed on your system:
 2. Find the "Whisper" app and click it.
 3. Click on the "INSTALL" button.
 
+On x86-64, the app needs a CPU with x86-64-v2 (SSE4.2 and POPCNT, among
+others), which most CPUs made since about 2010 have. If Home Assistant runs in a
+virtual machine, its CPU type has to pass these through: in Proxmox, a CPU type
+of `kvm64` hides them, so choose `host` (or `x86-64-v2-AES` or newer) instead.
+Otherwise the app stops at startup, and its log lists the missing features.
+
 ## How to use
 
 After this app is installed and running, it will be automatically discovered
