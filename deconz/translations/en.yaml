@@ -1,7 +1,7 @@
 ---
 configuration:
   device:
-    name: Device
+    name: Devices
     description: The device address of your ConBee/RaspBee.
   dbg_info:
     name: Debug Info
@@ -35,8 +35,8 @@ configuration:
         name: OSRAM/LEDVANCE
 network:
   40850/tcp: >-
-    deCONZ API backend (Access for Phoscon and REST API outside the app)
+    API backend (Access for Phoscon and REST API outside the app)
   5900/tcp: >-
-    deCONZ via VNC (Accessing the GUI with external VNC software. Not secured!)
+    VNC (Access to the GUI via an external VNC viewer. Not secured!)
   8081/tcp: >-
-    deCONZ WebSocket (Connection to other applications e.g. Node-RED)
+    Websocket (Connection to other applications, such as Node-RED)

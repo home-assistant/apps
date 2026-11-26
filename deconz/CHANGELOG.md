@@ -1,5 +1,10 @@
 # Changelog
 
+## 8.8.1
+
+- Update base image to trixie-2026.11.1
+- Publish app to GHCR
+
 ## 8.8.0
 
 - Upgrade base image from bookworm to trixie

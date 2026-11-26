@@ -140,7 +140,6 @@ Example app config with `dbg_aps` enabled on log level L2:
 ```yaml
 device: /dev/ttyUSB0
 dbg_aps: 2
-
 ```
 
 ## Configuration
@@ -162,8 +161,8 @@ change if other devices are added to the system.
 
 In most cases this looks like one of the following:
 
-- `"/dev/serial/by-id/usb-dresden_elektronik_ingenieurtechnik_GmbH_ConBee_II_XXXXXXXX-if00"` <br> 
-   (and similar for RaspBee and the original ConBee, replace `XXXXXXXX` with the value you see in your above mentioned hardware page)
+- `"/dev/serial/by-id/usb-dresden_elektronik_ingenieurtechnik_GmbH_ConBee_II_XXXXXXXX-if00"` <br>
+  (and similar for RaspBee and the original ConBee, replace `XXXXXXXX` with the value you see in your above mentioned hardware page)
 - `"/dev/ttyUSB0"`
 - `"/dev/ttyAMA0"`
 - `"/dev/ttyACM0"`
@@ -196,8 +195,8 @@ fails to communicate new settings to Home Assistant.
 This can be solved by the following steps:
 
 1. Backup your deCONZ/Phoscon data, by going into the Phoscon App, from the menu choose:
-  **Settings** -> **Gateway** -> **Backup options**, then create
-  a new backup and download it onto your computer.
+   **Settings** -> **Gateway** -> **Backup options**, then create
+   a new backup and download it onto your computer.
 2. Uninstall the app.
 3. In Home Assistant, remove the current integration you have for deCONZ.
 4. Restart Home Assistant.
@@ -247,7 +246,7 @@ In case you've found a bug, please [open an issue on our GitHub][issue].
 
 [discord]: https://www.home-assistant.io/join-chat
 [forum]: https://community.home-assistant.io
-[issue]: https://github.com/home-assistant/addons/issues
+[issue]: https://github.com/home-assistant/app-deconz/issues
 [manual-upgrade]: https://github.com/dresden-elektronik/deconz-rest-plugin/wiki/Update-deCONZ-manually
 [reddit]: https://reddit.com/r/homeassistant
 [vnc-viewer]: https://tigervnc.org
