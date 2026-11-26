@@ -1,5 +1,15 @@
 # Changelog
 
+## 0.2.1
+
+### Bug fixes
+
+- The app now starts on x86-64 computers whose processor lacks AVX2, such as
+  the Dell Optiplex 990. It used to stop at startup with an illegal
+  instruction error.
+- When a wake word is refused because it sounded more like a similar word,
+  the log now names that word.
+
 ## 0.2.0
 
 ### New features
