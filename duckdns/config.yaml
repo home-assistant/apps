@@ -1,21 +1,19 @@
----
-version: 2.0.1
+version: 2.1.0
 slug: duckdns
 name: Duck DNS
-description: >-
-  Free Dynamic DNS (DynDNS or DDNS) service with Let's Encrypt support
-url: https://github.com/home-assistant/addons/tree/master/duckdns
+description: Free Dynamic DNS (DynDNS or DDNS) service with Let's Encrypt support
+url: https://github.com/home-assistant/app-duckdns
 arch:
-  - aarch64
-  - amd64
+- aarch64
+- amd64
 hassio_api: true
 init: false
-image: homeassistant/{arch}-addon-duckdns
+image: ghcr.io/home-assistant/app-duckdns
 map:
-  - ssl:rw
+- ssl:rw
 options:
   domains:
-    - null
+  - null
   token: null
   aliases: []
   lets_encrypt:
@@ -26,11 +24,11 @@ options:
   seconds: 300
 schema:
   domains:
-    - match(.+\.duckdns\.org)
+  - match(.+\.duckdns\.org)
   token: str
   aliases:
-    - alias: str
-      domain: str
+  - alias: str
+    domain: str
   lets_encrypt:
     accept_terms: bool
     algo: list(rsa|prime256v1|secp384r1)

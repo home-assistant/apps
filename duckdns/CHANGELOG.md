@@ -1,5 +1,10 @@
 # Changelog
 
+## 2.1.0
+
+- Update base image to Alpine 3.24
+- Publish app to GHCR
+
 ## 2.0.1
 
 - Strip whitespace from DuckDNS API token (avoids fatal errors from copy-paste spaces)
