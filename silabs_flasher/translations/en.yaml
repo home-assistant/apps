@@ -3,23 +3,25 @@ configuration:
   device:
     name: Device
     description: The serial port where the Silicon Labs radio is connected to.
-  bootloader_baudrate:
-    name: Bootloader Baudrate
-    description: >-
-      The serial port baudrate used to communicate with the Silicon Labs radio
-      in bootloader mode.
-  ezsp_baudrate:
-    name: EZSP Baudrate
-    description: >-
-      The serial port baudrate used to communicate with the Silicon Labs radio
-      in ezsp mode.
-  flow_control:
-    name: Hardware flow control
-    description: Enable hardware flow control for serial port.
   firmware_url:
     name: Firmware URL
     description: >-
-      Flash Custom firmware downloaded from URL.
+      URL of the firmware to flash (GBL file, or a ZIP archive containing one).
+  profile:
+    name: Device profile
+    description: >-
+      Use the predefined flashing profile of a known device. Cannot be combined
+      with probe methods or bootloader reset.
+  probe_methods:
+    name: Probe methods
+    description: >-
+      Comma-separated list of application type and baudrate pairs used to
+      detect the running firmware, e.g. `bootloader:115200,ezsp:115200`.
+  bootloader_reset:
+    name: Bootloader reset
+    description: >-
+      Comma-separated list of reset methods used to enter the bootloader
+      (`yellow`, `ihost`, `slzb07`, `rts_dtr`, `baudrate`).
   verbose:
     name: Verbose mode
     description: >-

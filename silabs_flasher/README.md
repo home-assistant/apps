@@ -2,9 +2,6 @@
 
 Silicon Labs Flasher app (formerly known as add-on) to flash Silicon Labs based radios.
 
-By default this app flashes the firmware to use Zigbee (Silicon
-Labs EmberZNet Zigbee stack).
-
 **NOTE:** Make sure no other app or integration is using the radio. In
 particular disable the Zigbee Home Automation integration and the Silicon Labs
 Multiprotocol app.
@@ -15,8 +12,7 @@ Multiprotocol app.
 ## About
 
 This app allows you to flash firmwares using the Gecko Bootloader file format
-(gbl). By default it comes with firmware for Home Assistant SkyConnect/ZBT-1 and
-Home Assistant Yellow to flash Zigbee.
+(gbl) from a URL. It does not ship any firmware itself.
 
 [aarch64-shield]: https://img.shields.io/badge/aarch64-yes-green.svg
 [amd64-shield]: https://img.shields.io/badge/amd64-yes-green.svg

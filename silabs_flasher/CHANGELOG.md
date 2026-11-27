@@ -1,5 +1,14 @@
 # Changelog
 
+## 1.0.0
+
+- Update base image to 3.14-alpine3.24-2026.11.1
+- Print flashing progress as plain log lines
+- Use bashio::app functions and app wording
+- Update universal-silabs-flasher to v1.3.0 and rework options
+- Move the s6 user bundle to user-bundles.d
+- Publish app to GHCR
+
 ## 0.5.0
 
 - Detect Home Assistant Yellow correctly on latest HAOS versions
