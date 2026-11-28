@@ -3,7 +3,7 @@ version: 1.4.5
 slug: speech-to-phrase
 name: Speech-to-Phrase
 description: Fast and personalized local speech-to-text
-url: http://github.com/OHF-voice/speech-to-phrase
+url: https://github.com/home-assistant/app-speech-to-phrase
 arch:
   - amd64
   - aarch64
